@@ -1,0 +1,15 @@
+﻿{
+  "PlayerCommands": [
+    "help",
+    "tp",
+    "tph",
+    "back",
+    "spawn",
+    "home",
+    "sethome",
+    "delhome",
+    "listhome",
+    "warp",
+    "listwarp"
+  ]
+}

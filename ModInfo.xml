@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <ModInfo>
+        <Name value="PlayerCommands/玩家指令" />
+        <Description value="Provide some useful commands/提供一些实用指令" />
+        <Author value="Mouse0w0" />
+  		<Version value="20.0" />
+    </ModInfo>
+</xml>

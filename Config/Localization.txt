@@ -1,0 +1,5 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
+PC_ConsoleCmdDesc,,,,,PlayerCommands‘s console command,,,,,,,,,,,,玩家指令模组的控制台指令,,
+PC_ConsoleCmdHelp,,,,,PlayerCommands’s console command,,,,,,,,,,,,玩家指令模组的控制台指令,,
+PC_ReloadConfig,,,,,[PlayerCommands] Reloaded config,,,,,,,,,,,,[玩家指令]重载配置文件完成,,
+PC_NoEnoughParma,,,,,[PlayerCommands] Loaded config,,,,,,,,,,,,[玩家指令]参数不足,,
