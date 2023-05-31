@@ -13,7 +13,7 @@ public class Main : IModApi
         
         Config.Load();
 
-        new Harmony("com.github.mouse0w0.essentials").PatchAll();
+        new Harmony("com.github.mouse0w0.playercommands").PatchAll();
         
         ModEvents.PlayerSpawnedInWorld.RegisterHandler(DataManager.OnPlayerSpawnedInWorld);
         ModEvents.PlayerDisconnected.RegisterHandler(DataManager.OnPlayerDisconnected);
