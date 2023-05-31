@@ -101,7 +101,7 @@ public static class Utility
 
     public static bool IsClient()
     {
-        return !SingletonMonoBehaviour<ConnectionManager>.Instance.IsClient;
+        return !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer;
     }
 
     public static bool IsAdmin(this ClientInfo clientInfo)

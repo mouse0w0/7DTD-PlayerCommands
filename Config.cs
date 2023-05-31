@@ -9,13 +9,13 @@ public static class Config
 
     public static void Load()
     {
-        Log.Out("[Essentials] Loading config");
+        Log.Out("[PlayerCommands] Loading config");
 
         var configFile = Main.Instance.Path + "/Config.json";
         var root = JObject.Parse(Utility.ReadAllText(configFile) ?? "{}");
 
         PlayerCommands = root.GetValue("PlayerCommands").ToObject<HashSet<string>>();
 
-        Log.Out("[Essentials] Loaded config");
+        Log.Out("[PlayerCommands] Loaded config");
     }
 }

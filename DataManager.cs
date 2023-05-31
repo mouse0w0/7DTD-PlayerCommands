@@ -45,7 +45,7 @@ public static class DataManager
         playerData.lastPlayerName = playerName;
         PlayerDataDict.Add(playerId, playerData);
 
-        Log.Out($"[Essentials] Loaded player data {playerId}/{playerName}");
+        Log.Out($"[PlayerCommands] Loaded player data {playerId}/{playerName}");
     }
 
     internal static void OnPlayerDisconnected(ClientInfo clientInfo, bool shutdown)
@@ -68,22 +68,22 @@ public static class DataManager
         var playerDataPath = GetPlayerDataPath($"{playerId}.json");
         Utility.WriteAllText(playerDataPath, JsonConvert.SerializeObject(playerData));
 
-        Log.Out($"[Essentials] Saved player data {playerId}/{playerData.lastPlayerName}");
+        Log.Out($"[PlayerCommands] Saved player data {playerId}/{playerData.lastPlayerName}");
     }
 
     private static void Load()
     {
-        Log.Out("[Essentials] Loading data.");
+        Log.Out("[PlayerCommands] Loading data.");
         spawn = JsonConvert.DeserializeObject<Location?>(
             Utility.ReadAllText(GetGlobalDataPath("Spawn.json")) ?? "null");
         warps = JsonConvert.DeserializeObject<Dictionary<string, Location>>(
             Utility.ReadAllText(GetGlobalDataPath("Warps.json")) ?? "{}");
-        Log.Out("[Essentials] Loaded data.");
+        Log.Out("[PlayerCommands] Loaded data.");
     }
 
     private static void Save()
     {
-        Log.Out("[Essentials] Saving data.");
+        Log.Out("[PlayerCommands] Saving data.");
         Utility.WriteAllText(GetGlobalDataPath("Spawn.json"), JsonConvert.SerializeObject(spawn));
         Utility.WriteAllText(GetGlobalDataPath("Warps.json"), JsonConvert.SerializeObject(warps));
         foreach (var keyValuePair in PlayerDataDict)
@@ -91,7 +91,7 @@ public static class DataManager
             SavePlayerData(keyValuePair.Key, keyValuePair.Value);
         }
 
-        Log.Out("[Essentials] Saved data.");
+        Log.Out("[PlayerCommands] Saved data.");
     }
 
     private static void Cleanup()
@@ -103,11 +103,11 @@ public static class DataManager
 
     private static string GetGlobalDataPath(string fileName)
     {
-        return GameIO.GetSaveGameDir() + "/Essentials/" + fileName;
+        return GameIO.GetSaveGameDir() + "/PlayerCommands/" + fileName;
     }
 
     private static string GetPlayerDataPath(string fileName)
     {
-        return GameIO.GetSaveGameDir() + "/Essentials/PlayerData/" + fileName;
+        return GameIO.GetSaveGameDir() + "/PlayerCommands/PlayerData/" + fileName;
     }
 }
