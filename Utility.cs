@@ -32,11 +32,14 @@ public static class Utility
             : GameManager.Instance.World.GetPrimaryPlayer();
     }
 
-    public static EntityPlayer FindEntityPlayer(string name)
+    public static EntityPlayer FindEntityPlayer(string playerName)
     {
-        var matches = GameManager.Instance.World.Players.list.FindAll(p => p.EntityName.ContainsCaseInsensitive(name))
-            .ToList();
-        return matches.Count == 1 ? matches[0] : null;
+        var player = GetEntityPlayer(playerName);
+        if (player != null) return player;
+        var matches = GameManager.Instance.World.Players.list
+            .FindAll(p => p.EntityName.ContainsCaseInsensitive(playerName))
+            .ToArray();
+        return matches.Length == 1 ? matches[0] : null;
     }
 
     public static ClientInfo GetClientInfo(int entityId)
