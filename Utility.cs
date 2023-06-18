@@ -106,7 +106,7 @@ public static class Utility
 
     public static bool IsAdmin(this ClientInfo clientInfo)
     {
-        return clientInfo == null || GameManager.Instance.adminTools.GetUserPermissionLevel(clientInfo) == 0;
+        return clientInfo == null || GameManager.Instance.adminTools.Users.GetUserPermissionLevel(clientInfo) == 0;
     }
 
     public static bool HasPermission(this ClientInfo clientInfo, string permission)

@@ -6,15 +6,15 @@ public class ConsoleCmdMod : ConsoleCmdAbstract
 {
     public override bool AllowedInMainMenu => true;
     
-    public override string[] GetCommands() => new[]
+    protected override string[] getCommands() => new[]
     {
         "playercommands",
         "pc"
     };
-    
-    public override string GetHelp() => Localization.Get("PC_CommandCmdHelp");
 
-    public override string GetDescription() => Localization.Get("PC_ConsoleCmdDesc");
+    protected override string getHelp() => Localization.Get("PC_CommandCmdHelp");
+
+    protected override string getDescription() => Localization.Get("PC_ConsoleCmdDesc");
 
     public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
     {
