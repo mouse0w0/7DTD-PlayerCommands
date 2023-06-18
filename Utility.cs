@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using Platform;
+using UniLinq;
 using UnityEngine;
 
 namespace PlayerCommands;
@@ -38,8 +39,8 @@ public static class Utility
         if (player != null) return player;
         var matches = GameManager.Instance.World.Players.list
             .FindAll(p => p.EntityName.ContainsCaseInsensitive(playerName))
-            .ToList();
-        return matches.Count == 1 ? matches[0] : null;
+            .ToArray();
+        return matches.Length == 1 ? matches[0] : null;
     }
 
     public static ClientInfo GetClientInfo(int entityId)
