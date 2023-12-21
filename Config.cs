@@ -6,6 +6,7 @@ namespace PlayerCommands;
 public static class Config
 {
     public static HashSet<string> PlayerCommands { get; private set; }
+    public static string[] HelpMessage { get; private set; }
 
     public static void Load()
     {
@@ -15,6 +16,7 @@ public static class Config
         var root = JObject.Parse(Utility.ReadAllText(configFile) ?? "{}");
 
         PlayerCommands = root.GetValue("PlayerCommands").ToObject<HashSet<string>>();
+        HelpMessage = root.GetValue("HelpMessage").ToObject<string[]>();
 
         Log.Out("[PlayerCommands] Loaded config");
     }

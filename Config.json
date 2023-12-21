@@ -11,5 +11,14 @@
     "listhome",
     "warp",
     "listwarp"
+  ],
+  "HelpMessage": [
+    "[FFAA00]/tp <玩家> - 请求传送到玩家",
+    "[FFAA00]/tph <玩家> - 请求玩家传送到你",
+    "[FFAA00]/home - 回家",
+    "[FFAA00]/sethome - 设置家",
+    "[FFAA00]/back - 返回上一地点",
+    "[FFAA00]/spawn - 传送到出生点",
+    "[FFAA00]/warp <地标> - 传送到地标"
   ]
 }
