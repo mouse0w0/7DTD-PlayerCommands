@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xml>
-    <ModInfo>
-        <Name value="PlayerCommands/玩家指令" />
-        <Description value="Provide some useful commands/提供一些实用指令" />
-        <Author value="Mouse0w0" />
-  		<Version value="21.0" />
-    </ModInfo>
+    <Name value="PlayerCommands"/>
+    <DisplayName value="PlayerCommands/玩家指令"/>
+    <Version value="21.0"/>
+    <Description value="Provide some useful commands/提供一些实用指令"/>
+    <Author value="Mouse0w0"/>
+    <Website value="https://github.com/mouse0w0/7DTD-PlayerCommands"/>"
 </xml>
