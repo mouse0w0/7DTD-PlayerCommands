@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using UnityEngine.UIElements;
-
-namespace PlayerCommands.Command;
+﻿namespace PlayerCommands.Command;
 
 public static class HelpCommand
 {
