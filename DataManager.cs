@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -37,11 +38,24 @@ public static class DataManager
 
         var playerId = clientInfo.GetPlayerId();
         var playerName = clientInfo.GetPlayerName();
-        var playerDataPath = GetPlayerDataPath($"{playerId}.json");
-        var playerData = File.Exists(playerDataPath)
-            ? JsonConvert.DeserializeObject<PlayerData>(Utility.ReadAllText(playerDataPath))
-            : new PlayerData();
+        Log.Out($"[PlayerCommands] Loading player data {playerId}/{playerName}");
 
+        var playerDataPath = GetPlayerDataPath($"{playerId}.json");
+        PlayerData playerData = null;
+        if (File.Exists(playerDataPath))
+        {
+            try
+            {
+                playerData = JsonConvert.DeserializeObject<PlayerData>(File.ReadAllText(playerDataPath));
+            }
+            catch (Exception e)
+            {
+                Log.Error($"[PlayerCommands] Error while loading player data {playerId}/{playerName}");
+                Log.Exception(e);
+            }
+        }
+
+        playerData ??= new PlayerData();
         playerData.lastPlayerName = playerName;
         PlayerDataDict.Add(playerId, playerData);
 
@@ -65,8 +79,17 @@ public static class DataManager
 
     private static void SavePlayerData(string playerId, PlayerData playerData)
     {
+        Log.Out($"[PlayerCommands] Saving player data {playerId}/{playerData.lastPlayerName}");
         var playerDataPath = GetPlayerDataPath($"{playerId}.json");
-        Utility.WriteAllText(playerDataPath, JsonConvert.SerializeObject(playerData));
+        try
+        {
+            Utility.WriteAllText(playerDataPath, JsonConvert.SerializeObject(playerData));
+        }
+        catch (Exception e)
+        {
+            Log.Error($"[PlayerCommands] Error while saving player data {playerId}/{playerData.lastPlayerName}");
+            Log.Exception(e);
+        }
 
         Log.Out($"[PlayerCommands] Saved player data {playerId}/{playerData.lastPlayerName}");
     }

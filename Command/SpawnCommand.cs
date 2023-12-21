@@ -52,6 +52,6 @@ public static class SpawnCommand
         if (Utility.IsClient()) return;
         if (type is not (RespawnType.NewGame or RespawnType.EnterMultiplayer)) return;
         if (DataManager.spawn == null) return;
-        clientInfo.Teleport(DataManager.spawn ?? throw new NullReferenceException());
+        clientInfo.Teleport(DataManager.spawn ?? throw new Exception("Cannot reach"));
     }
 }
