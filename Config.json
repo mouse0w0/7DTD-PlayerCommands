@@ -1,4 +1,22 @@
 ﻿{
+  "Commands": {
+    "help": ["/help", "/?"],
+    "tp": ["/tp"],
+    "tph": ["/tph"],
+    "tpaccept": ["/ok"],
+    "spawn": ["/spawn", "/sp"],
+    "setspawn": ["/setspawn", "/ssp"],
+    "delspawn": ["/delspawn", "/dsp"],
+    "warp": ["/warp", "/wp"],
+    "setwarp": ["/setwarp", "/swp"],
+    "delwarp": ["/delwarp", "/dwp"],
+    "listwarp": ["/listwarp", "/lwp"],
+    "home": ["/home", "/hm"],
+    "sethome": ["/sethome", "/shm"],
+    "delhome": ["/delhome", "/dhm"],
+    "listhome": ["/listhome", "/lhm"],
+    "back": ["/back", "/bk"]
+  },
   "PlayerCommands": [
     "help",
     "tp",

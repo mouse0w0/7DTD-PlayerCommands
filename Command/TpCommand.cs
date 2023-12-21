@@ -70,7 +70,7 @@ public static class TpCommand
         sender.SendMessage($"[FFAA00]已发送传送请求到“{target.EntityName}”");
     }
 
-    public static void Ok(CommandSender sender, string[] args)
+    public static void TpAccept(CommandSender sender, string[] args)
     {
         if (!pendingRequest.TryGetValue(sender.entityId, out var request))
         {
