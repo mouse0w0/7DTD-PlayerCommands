@@ -9,6 +9,8 @@ public static class Config
     public static Dictionary<string, string> Commands { get; private set; }
     public static HashSet<string> PlayerCommands { get; private set; }
     public static string[] HelpMessage { get; private set; }
+    public static string TpRequestMessage { get; private set; }
+    public static string TphRequestMessage { get; private set; }
 
     public static void Load()
     {
@@ -41,6 +43,8 @@ public static class Config
         }
         PlayerCommands = root.GetValue("PlayerCommands")!.ToObject<HashSet<string>>();
         HelpMessage = root.GetValue("HelpMessage")!.ToObject<string[]>();
+        TpRequestMessage = root.GetValue("TpRequestMessage")!.ToString();
+        TphRequestMessage = root.GetValue("TphRequestMessage")!.ToString();
 
         Log.Out("[PlayerCommands] Loaded config");
     }

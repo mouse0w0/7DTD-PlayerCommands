@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PlayerCommands.Command;
 
@@ -34,7 +35,7 @@ public static class TpCommand
         }
 
         pendingRequest[target.entityId] = new TpaRequest(sender.entityId);
-        Utility.SendMessage(target.entityId, $"[FFAA00]“{sender.entityName}”请求传送到你，输入/ok接受");
+        Utility.SendMessage(target.entityId, string.Format(Config.TpRequestMessage, sender.entityName));
         sender.SendMessage($"[FFAA00]已发送传送请求到“{target.EntityName}”");
     }
 
@@ -66,7 +67,7 @@ public static class TpCommand
         }
 
         pendingRequest[target.entityId] = new TpaRequest(sender.entityId, true);
-        Utility.SendMessage(target.entityId, $"[FFAA00]“{sender.entityName}”请求你传送到他，输入/ok接受");
+        Utility.SendMessage(target.entityId, string.Format(Config.TphRequestMessage, sender.entityName));
         sender.SendMessage($"[FFAA00]已发送传送请求到“{target.EntityName}”");
     }
 
