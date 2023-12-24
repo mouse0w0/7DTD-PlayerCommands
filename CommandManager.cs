@@ -43,7 +43,7 @@ public static class CommandManager
         _msg = _msg.Trim();
         
         var idx = _msg.IndexOf(' ');
-        var name = (idx == -1 ? _msg : _msg.Substring(0, idx - 1)).ToLower();
+        var name = (idx == -1 ? _msg : _msg.Substring(0, idx)).ToLower();
         if (!Config.Commands.TryGetValue(name, out var command)) return true;
         Log.Out($"{_mainName} (from {_cInfo.GetPlayerId()}, entity id {_senderEntityId}) issued command: {_msg}");
         if (!Commands.TryGetValue(command, out var handler)) return true;
