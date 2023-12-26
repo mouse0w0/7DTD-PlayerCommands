@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerCommands", "PlayerCommands.csproj", "{164B1413-733C-4FE4-9132-F720B122B5FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerCommands", "src\PlayerCommands.csproj", "{164B1413-733C-4FE4-9132-F720B122B5FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
