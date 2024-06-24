@@ -75,10 +75,10 @@ public static class Utility
         EChatType type = EChatType.Global)
     {
         if (receiver != null)
-            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, sender, false,
+            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, sender, 
                 new List<int> { receiver.entityId });
         else
-            GameManager.Instance.ChatMessageClient(type, -1, message, sender, false, null);
+            GameManager.Instance.ChatMessageClient(type, -1, message, sender, null);
     }
 
     public static void Teleport(this ClientInfo client, Location location)
