@@ -6,45 +6,42 @@ public static class SpawnCommand
 {
     public static void Spawn(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("spawn"))
+        if (sender.IsNoPermissionAndSendMessage("spawn"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
         
         if (DataManager.spawn != null)
         {
             sender.Teleport(DataManager.spawn ?? throw new NullReferenceException());
-            sender.SendMessage("[FFAA00]已传送至出生点");
+            sender.SendMessage(Message.Get("Spawn.Finish"));
         }
         else
         {
-            sender.SendMessage("[FF5555]未设置出生点");
+            sender.SendMessage(Message.Get("Spawn.NotSet"));
         }
     }
 
     public static void SetSpawn(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("setspawn"))
+        if (sender.IsNoPermissionAndSendMessage("setspawn"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
 
         DataManager.spawn = sender.Location;
-        sender.SendMessage("[FFAA00]已设置出生点");
+        sender.SendMessage(Message.Get("SetSpawn.Finish"));
     }
 
     public static void DelSpawn(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("delspawn"))
+        if (sender.IsNoPermissionAndSendMessage("delspawn"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
         
         DataManager.spawn = null;
-        sender.SendMessage("[FFAA00]已删除出生点");
+        sender.SendMessage(Message.Get("DelSpawn.Finish"));
     }
 
     public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)

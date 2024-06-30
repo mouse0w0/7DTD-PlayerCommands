@@ -8,6 +8,26 @@ namespace PlayerCommands;
 
 public static class Utility
 {
+    public static string Format(this string format, object arg0)
+    {
+        return string.Format(format, arg0);
+    }
+
+    public static string Format(this string format, object arg0, object arg1)
+    {
+        return string.Format(format, arg0, arg1);
+    }
+
+    public static string Format(this string format, object arg0, object arg1, object arg2)
+    {
+        return string.Format(format, arg0, arg1, arg2);
+    }
+
+    public static string Format(this string format, params object[] args)
+    {
+        return string.Format(format, args);
+    }
+
     public static EntityPlayer GetEntityPlayer(int entityId)
     {
         return GameManager.Instance.World.Players.dict.TryGetValue(entityId, out var entityPlayer)
@@ -75,7 +95,7 @@ public static class Utility
         EChatType type = EChatType.Global)
     {
         if (receiver != null)
-            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, sender, 
+            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, sender,
                 new List<int> { receiver.entityId });
         else
             GameManager.Instance.ChatMessageClient(type, -1, message, sender, null);
@@ -95,7 +115,7 @@ public static class Utility
         else
             netPackageTeleportPlayer.ProcessPackage();
     }
-    
+
     public static bool IsServer()
     {
         return SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer;

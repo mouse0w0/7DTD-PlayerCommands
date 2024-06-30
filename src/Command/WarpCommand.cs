@@ -4,84 +4,88 @@ public static class WarpCommand
 {
     public static void Warp(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("warp"))
+        if (sender.IsNoPermissionAndSendMessage("warp"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
         
         if (args.Length == 0)
         {
-            sender.SendMessage("[FF5555]缺少参数");
+            sender.SendMessage(Message.Get("NoEnoughParam"));
             return;
         }
 
         if (!DataManager.warps.TryGetValue(args[0], out var location))
         {
-            sender.SendMessage($"[FF5555]未找到地标：{args[0]}");
-            return;
+            sender.SendMessage(Message.Get("Warp.NotSet").Format(args[0]));
         }
-
-        sender.Teleport(location);
-        sender.SendMessage($"[FFAA00]已传送至地标：{args[0]}");
+        else
+        {
+            sender.Teleport(location);
+            sender.SendMessage(Message.Get("Warp.Finish").Format(args[0]));
+        }
     }
 
     public static void SetWarp(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("setwarp"))
+        if (sender.IsNoPermissionAndSendMessage("setwarp"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
 
         if (args.Length == 0)
         {
-            sender.SendMessage("[FF5555]缺少参数");
+            sender.SendMessage(Message.Get("NoEnoughParam"));
             return;
         }
 
         if (DataManager.warps.ContainsKey(args[0]))
         {
-            sender.SendMessage($"[FF5555]已存在地标：{args[0]}");
+            sender.SendMessage(Message.Get("SetWarp.Exists").Format(args[0]));
         }
         else
         {
             DataManager.warps.Add(args[0], sender.Location);
-            sender.SendMessage($"[FFAA00]已设置地标：{args[0]}");
+            sender.SendMessage(Message.Get("SetWrap.Finish").Format(args[0]));
         }
     }
 
     public static void DelWarp(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("delwarp"))
+        if (sender.IsNoPermissionAndSendMessage("delwarp"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
 
         if (args.Length == 0)
         {
-            sender.SendMessage("[FF5555]缺少参数");
+            sender.SendMessage(Message.Get("NoEnoughParam"));
             return;
         }
 
         if (DataManager.warps.Remove(args[0]))
-            sender.SendMessage($"[FFAA00]已删除地标：{args[0]}");
+        {
+            sender.SendMessage(Message.Get("DelWarp.Finish").Format(args[0]));
+        }
         else
-            sender.SendMessage($"[FF5555]未找到地标：{args[0]}");
+        {
+            sender.SendMessage(Message.Get("DelWarp.NotSet").Format(args[0]));
+        }
     }
 
     public static void ListWarp(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("listwarp"))
+        if (sender.IsNoPermissionAndSendMessage("listwarp"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
-        
-        foreach (var keyValuePair in DataManager.warps)
-            sender.SendMessage($"[FFAA00]{keyValuePair.Key}：{keyValuePair.Value.ToPositionString()}");
 
-        sender.SendMessage($"[FFAA00]已列出{DataManager.warps.Count}个地标");
+        foreach (var keyValuePair in DataManager.warps)
+        {
+            sender.SendMessage(
+                Message.Get("ListWarp.Item").Format(keyValuePair.Key, keyValuePair.Value.ToPositionString()));
+        }
+
+        sender.SendMessage(Message.Get("ListWarp.Finish").Format(DataManager.warps.Count));
     }
 }

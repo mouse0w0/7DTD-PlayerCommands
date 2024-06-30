@@ -12,6 +12,7 @@ public class Main : IModApi
         Instance = _modInstance;
         
         Config.Load();
+        Message.Load();
 
         new Harmony("com.github.mouse0w0.playercommands").PatchAll();
         

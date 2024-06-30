@@ -12,15 +12,15 @@ public class ConsoleCmdMod : ConsoleCmdAbstract
         "pc"
     };
 
-    public override string getHelp() => Localization.Get("PCCommandCmdHelp");
+    public override string getHelp() => Message.Get("Console.Help");
 
-    public override string getDescription() => Localization.Get("PCConsoleCmdDesc");
+    public override string getDescription() => Message.Get("Console.Desc");
 
     public override void Execute(List<string> _params, CommandSenderInfo _senderInfo)
     {
         if (_params.Count == 0)
         {
-            Log.Out(Localization.Get("PCConsoleCmdUsage"));
+            Log.Out(Message.Get("Console.Usage"));
             return;
         }
 
@@ -29,16 +29,10 @@ public class ConsoleCmdMod : ConsoleCmdAbstract
             case "reload":
             {
                 Config.Load();
-                Log.Out(Localization.Get("PCConsoleReloadConfig"));
+                Message.Load();
+                Log.Out(Message.Get("Console.Reloaded"));
                 return;
             }
         }
-    }
-
-    private static bool IsNoEnoughParam(List<string> _params, int _expectedCount)
-    {
-        if (_params.Count >= _expectedCount) return false;
-        Log.Out(Localization.Get("PCConsoleNoEnoughParam"));
-        return true;
     }
 }

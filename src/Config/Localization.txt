@@ -1,6 +1,0 @@
-Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,latam,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese,spanish
-PCConsoleCmdHelp,,,,,PlayerCommands’s console command,,,,,,,,,,,,玩家指令模组的控制台指令,,
-PCConsoleCmdDesc,,,,,PlayerCommands‘s console command,,,,,,,,,,,,玩家指令模组的控制台指令,,
-PCConsoleCmdUsage,,,,,[PlayerCommands]pc reload - Reload Config,,,,,,,,,,,,[玩家指令]pc reload - 重载配置文件,,
-PCConsoleReloadConfig,,,,,[PlayerCommands]Reloaded config,,,,,,,,,,,,[玩家指令]重载配置文件完成,,
-PCConsoleNoEnoughParma,,,,,[PlayerCommands]No enough parameters,,,,,,,,,,,,[玩家指令]参数不足,,

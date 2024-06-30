@@ -8,22 +8,19 @@ public static class Config
 {
     public static Dictionary<string, string> Commands { get; private set; }
     public static HashSet<string> PlayerCommands { get; private set; }
-    public static string[] HelpMessage { get; private set; }
-    public static string TpRequestMessage { get; private set; }
-    public static string TphRequestMessage { get; private set; }
 
     public static void Load()
     {
-        var configFile = Main.Instance.Path + "/Config.json";
-        if (!File.Exists(configFile))
+        var file = Main.Instance.Path + "/Config.json";
+        if (!File.Exists(file))
         {
-            Log.Error($"[PlayerCommands] Not found config file at {configFile}");
+            Log.Error($"[PlayerCommands] Not found config file at {file}");
             return;
         }
         
         Log.Out("[PlayerCommands] Loading config");
         
-        var root = JObject.Parse(File.ReadAllText(configFile));
+        var root = JObject.Parse(File.ReadAllText(file));
         
         Commands = new Dictionary<string, string>();
         foreach (var commandPair in root.GetValue("Commands")!.ToObject<Dictionary<string, string[]>>())
@@ -42,9 +39,6 @@ public static class Config
             }
         }
         PlayerCommands = root.GetValue("PlayerCommands")!.ToObject<HashSet<string>>();
-        HelpMessage = root.GetValue("HelpMessage")!.ToObject<string[]>();
-        TpRequestMessage = root.GetValue("TpRequestMessage")!.ToString();
-        TphRequestMessage = root.GetValue("TphRequestMessage")!.ToString();
 
         Log.Out("[PlayerCommands] Loaded config");
     }

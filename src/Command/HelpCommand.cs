@@ -4,13 +4,12 @@ public static class HelpCommand
 {
     public static void Help(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("help"))
+        if (sender.IsNoPermissionAndSendMessage("help"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
         
-        foreach (var s in Config.HelpMessage)
+        foreach (var s in Message.GetArray("Help"))
         {
             sender.SendMessage(s);
         }

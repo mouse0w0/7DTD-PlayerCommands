@@ -10,19 +10,19 @@ public static class BackCommand
 
     public static void Back(CommandSender sender, string[] args)
     {
-        if (!sender.HasPermission("back"))
+        if (sender.IsNoPermissionAndSendMessage("back"))
         {
-            sender.SendMessage("[FF5555]没有足够的权限");
             return;
         }
+
         if (!PrevLocation.TryGetValue(sender.entityId, out var location))
         {
-            sender.SendMessage("[FF5555]不存在上一地点");
+            sender.SendMessage(Message.Get("Back.NotFound"));
             return;
         }
 
         sender.Teleport(location);
-        sender.SendMessage("[FFAA00]已回到上一地点");
+        sender.SendMessage(Message.Get("Back.Finish"));
     }
 
     public static void OnEntityKilled(Entity entity, Entity killer)

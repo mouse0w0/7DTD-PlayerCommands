@@ -18,6 +18,17 @@ public struct CommandSender
     public string PlayerId => clientInfo.GetPlayerId();
     public Location Location => entityPlayer.GetLocation();
 
+    public bool IsNoPermissionAndSendMessage(string permission)
+    {
+        if (HasPermission(permission))
+        {
+            return false;
+        }
+
+        SendMessage(Message.Get("NoEnoughPerm"));
+        return true;
+    }
+
     public bool HasPermission(string permission) => clientInfo.HasPermission(permission);
 
     public void SendMessage(string message) => clientInfo.SendMessage(message);
