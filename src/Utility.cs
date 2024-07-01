@@ -28,6 +28,7 @@ public static class Utility
         return string.Format(format, args);
     }
 
+    [CanBeNull]
     public static EntityPlayer GetEntityPlayer(int entityId)
     {
         return GameManager.Instance.World.Players.dict.TryGetValue(entityId, out var entityPlayer)
@@ -35,6 +36,7 @@ public static class Utility
             : null;
     }
 
+    [CanBeNull]
     public static EntityPlayer GetEntityPlayer(string playerName)
     {
         var clientInfo = GetClientInfo(playerName);
@@ -44,6 +46,7 @@ public static class Utility
         return primaryPlayer.EntityName == playerName ? primaryPlayer : null;
     }
 
+    [CanBeNull]
     public static EntityPlayer GetEntityPlayer(this ClientInfo clientInfo)
     {
         return clientInfo != null
@@ -51,6 +54,7 @@ public static class Utility
             : GameManager.Instance.World.GetPrimaryPlayer();
     }
 
+    [CanBeNull]
     public static EntityPlayer FindEntityPlayer(string playerName)
     {
         var player = GetEntityPlayer(playerName);
@@ -61,16 +65,19 @@ public static class Utility
         return matches.Length == 1 ? matches[0] : null;
     }
 
+    [CanBeNull]
     public static ClientInfo GetClientInfo(int entityId)
     {
         return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.ForEntityId(entityId);
     }
 
+    [CanBeNull]
     public static ClientInfo GetClientInfo(string playerName)
     {
         return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.GetForPlayerName(playerName);
     }
 
+    [CanBeNull]
     public static ClientInfo GetClientInfo(this EntityPlayer entityPlayer)
     {
         return GetClientInfo(entityPlayer.entityId);
@@ -103,7 +110,7 @@ public static class Utility
 
     public static void Teleport(this ClientInfo client, Location location)
     {
-        Teleport(client, location.GetPosition(), location.GetRotation());
+        client.Teleport(location.Position, location.Rotation);
     }
 
     public static void Teleport(this ClientInfo client, Vector3 position, Vector3? rotation = null)

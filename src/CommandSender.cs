@@ -1,4 +1,6 @@
-﻿namespace PlayerCommands;
+﻿using UnityEngine;
+
+namespace PlayerCommands;
 
 public struct CommandSender
 {
@@ -14,7 +16,7 @@ public struct CommandSender
         this.entityPlayer = Utility.GetEntityPlayer(entityId);
         this.clientInfo = clientInfo;
     }
-
+    
     public string PlayerId => clientInfo.GetPlayerId();
     public Location Location => entityPlayer.GetLocation();
 
@@ -33,5 +35,9 @@ public struct CommandSender
 
     public void SendMessage(string message) => clientInfo.SendMessage(message);
 
-    public void Teleport(Location location) => clientInfo.Teleport(location);
+    public void Teleport(Location location) => clientInfo.Teleport(location.Position, location.Rotation);
+
+    public void Teleport(Vector3 position, Vector3? rotation = null) => clientInfo.Teleport(position, rotation);
+
+    public void Teleport(Entity target) => clientInfo.Teleport(target.position, target.rotation);
 }

@@ -11,9 +11,9 @@ public struct Location : IEquatable<Location>
     public float pitch;
     public float yaw;
 
-    public Vector3 GetPosition() => new(x, y, z);
+    public Vector3 Position => new(x, y, z);
 
-    public Vector3 GetRotation() => new(pitch, yaw, 0);
+    public Vector3 Rotation => new(pitch, yaw, 0);
 
     public string ToPositionString() => Utility.ToPositionString(x, z);
 
