@@ -35,7 +35,7 @@ public struct CommandSender
 
     public void SendMessage(string message) => clientInfo.SendMessage(message);
 
-    public void Teleport(Location location) => clientInfo.Teleport(location.Position, location.Rotation);
+    public void Teleport(Location location) => clientInfo.Teleport(location.GetPosition(), location.GetRotation());
 
     public void Teleport(Vector3 position, Vector3? rotation = null) => clientInfo.Teleport(position, rotation);
 

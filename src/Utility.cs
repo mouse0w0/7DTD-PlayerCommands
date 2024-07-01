@@ -110,7 +110,7 @@ public static class Utility
 
     public static void Teleport(this ClientInfo client, Location location)
     {
-        client.Teleport(location.Position, location.Rotation);
+        client.Teleport(location.GetPosition(), location.GetRotation());
     }
 
     public static void Teleport(this ClientInfo client, Vector3 position, Vector3? rotation = null)
