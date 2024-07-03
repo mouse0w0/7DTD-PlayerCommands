@@ -2,6 +2,7 @@
 using System.IO;
 using JetBrains.Annotations;
 using Platform;
+using UniLinq;
 using UnityEngine;
 
 namespace PlayerCommands;
@@ -31,9 +32,7 @@ public static class Utility
     [CanBeNull]
     public static EntityPlayer GetEntityPlayer(int entityId)
     {
-        return GameManager.Instance.World.Players.dict.TryGetValue(entityId, out var entityPlayer)
-            ? entityPlayer
-            : null;
+        return GameManager.Instance.World.Players.dict.GetValueOrDefault(entityId, null);
     }
 
     [CanBeNull]
@@ -43,6 +42,7 @@ public static class Utility
         if (clientInfo != null) return GetEntityPlayer(clientInfo.entityId);
 
         var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+        if (primaryPlayer == null) return null;
         return primaryPlayer.EntityName == playerName ? primaryPlayer : null;
     }
 
@@ -59,8 +59,8 @@ public static class Utility
     {
         var player = GetEntityPlayer(playerName);
         if (player != null) return player;
-        var matches = GameManager.Instance.World.Players.list
-            .FindAll(p => p.EntityName.ContainsCaseInsensitive(playerName))
+        var matches = GameManager.Instance.World.Players.dict.Values
+            .Where(p => p.EntityName.ContainsCaseInsensitive(playerName))
             .ToArray();
         return matches.Length == 1 ? matches[0] : null;
     }
