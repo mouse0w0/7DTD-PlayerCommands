@@ -26,11 +26,11 @@ public static class HomeCommand
             if (DataManager.PlayerDataDict[sender.PlayerId].homes.TryGetValue(args[0], out var location))
             {
                 sender.Teleport(location);
-                sender.SendMessage(Message.Get("Home.NotSet").Format(args[0]));
+                sender.SendMessage(Message.Get("Home.Finish").Format(args[0]));
             }
             else
             {
-                sender.SendMessage(Message.Get("Home.Finish").Format(args[0]));
+                sender.SendMessage(Message.Get("Home.NotSet").Format(args[0]));
             }
         }
     }

@@ -15,14 +15,14 @@ public static class WarpCommand
             return;
         }
 
-        if (!DataManager.warps.TryGetValue(args[0], out var location))
-        {
-            sender.SendMessage(Message.Get("Warp.NotSet").Format(args[0]));
-        }
-        else
+        if (DataManager.warps.TryGetValue(args[0], out var location))
         {
             sender.Teleport(location);
             sender.SendMessage(Message.Get("Warp.Finish").Format(args[0]));
+        }
+        else
+        {
+            sender.SendMessage(Message.Get("Warp.NotSet").Format(args[0]));
         }
     }
 
