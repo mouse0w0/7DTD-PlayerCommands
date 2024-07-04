@@ -70,9 +70,8 @@ public static class DataManager
 
     private static void SavePlayerData(string playerId)
     {
-        if (PlayerDataDict.TryGetValue(playerId, out var playerData))
+        if (PlayerDataDict.Remove(playerId, out var playerData))
         {
-            PlayerDataDict.Remove(playerId);
             SavePlayerData(playerId, playerData);
         }
     }

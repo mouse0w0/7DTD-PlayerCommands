@@ -38,6 +38,7 @@ public static class BackCommand
     {
         if (_package is not NetPackageTeleportPlayer) return;
         var entityPlayer = __instance.GetEntityPlayer();
+        if (entityPlayer == null) return;
         PrevLocation[entityPlayer.entityId] = entityPlayer.GetLocation();
     }
 

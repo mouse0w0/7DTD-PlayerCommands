@@ -2,7 +2,6 @@
 using System.IO;
 using JetBrains.Annotations;
 using Platform;
-using UniLinq;
 using UnityEngine;
 
 namespace PlayerCommands;
@@ -59,10 +58,9 @@ public static class Utility
     {
         var player = GetEntityPlayer(playerName);
         if (player != null) return player;
-        var matches = GameManager.Instance.World.Players.dict.Values
-            .Where(p => p.EntityName.ContainsCaseInsensitive(playerName))
-            .ToArray();
-        return matches.Length == 1 ? matches[0] : null;
+        var matches = GameManager.Instance.World.Players.list
+            .FindAll(p => p.EntityName.ContainsCaseInsensitive(playerName));
+        return matches.Count == 1 ? matches[0] : null;
     }
 
     [CanBeNull]

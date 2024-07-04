@@ -6,7 +6,7 @@ namespace PlayerCommands;
 
 public static class Message
 {
-    private static Dictionary<string, object> _messages = new();
+    private static readonly Dictionary<string, object> Messages = new();
 
     public static void Load()
     {
@@ -18,17 +18,17 @@ public static class Message
         }
 
         Log.Out("[PlayerCommands] Loading message");
-        _messages.Clear();
+        Messages.Clear();
         foreach (var keyValuePair in JObject.Parse(File.ReadAllText(file)))
         {
             if (keyValuePair.Value == null) continue;
             if (keyValuePair.Value.Type == JTokenType.Array)
             {
-                _messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string[]>();
+                Messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string[]>();
             }
             else
             {
-                _messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string>();
+                Messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string>();
             }
         }
 
@@ -37,11 +37,11 @@ public static class Message
 
     public static string Get(string messageKey)
     {
-        return (string)_messages.GetValueOrDefault(messageKey, messageKey);
+        return (string)Messages.GetValueOrDefault(messageKey, messageKey);
     }
 
     public static IEnumerable<string> GetArray(string messageKey)
     {
-        return (string[])(_messages.TryGetValue(messageKey, out var obj) ? obj : new[] { messageKey });
+        return (string[])(Messages.TryGetValue(messageKey, out var obj) ? obj : new[] { messageKey });
     }
 }
