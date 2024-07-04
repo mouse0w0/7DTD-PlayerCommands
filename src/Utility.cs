@@ -37,12 +37,7 @@ public static class Utility
     [CanBeNull]
     public static EntityPlayer GetEntityPlayer(string playerName)
     {
-        var clientInfo = GetClientInfo(playerName);
-        if (clientInfo != null) return GetEntityPlayer(clientInfo.entityId);
-
-        var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
-        if (primaryPlayer == null) return null;
-        return primaryPlayer.EntityName == playerName ? primaryPlayer : null;
+        return GameManager.Instance.World.Players.list.Find(p => p.EntityName.EqualsCaseInsensitive(playerName));
     }
 
     [CanBeNull]
@@ -56,23 +51,45 @@ public static class Utility
     [CanBeNull]
     public static EntityPlayer FindEntityPlayer(string playerName)
     {
-        var player = GetEntityPlayer(playerName);
-        if (player != null) return player;
-        var matches = GameManager.Instance.World.Players.list
-            .FindAll(p => p.EntityName.ContainsCaseInsensitive(playerName));
-        return matches.Count == 1 ? matches[0] : null;
+        List<EntityPlayer> fuzzyEntityPlayers = new();
+        foreach (var entityPlayer in GameManager.Instance.World.Players.list)
+        {
+            if (entityPlayer.EntityName.EqualsCaseInsensitive(playerName))
+            {
+                return entityPlayer;
+            }
+
+            if (entityPlayer.EntityName.ContainsCaseInsensitive(playerName))
+            {
+                fuzzyEntityPlayers.Add(entityPlayer);
+            }
+        }
+
+        return fuzzyEntityPlayers.Count == 1 ? fuzzyEntityPlayers[0] : null;
     }
 
     [CanBeNull]
     public static ClientInfo GetClientInfo(int entityId)
     {
-        return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.ForEntityId(entityId);
+        var clientInfo = SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.ForEntityId(entityId);
+        if (clientInfo != null) return clientInfo;
+
+        var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+        if (primaryPlayer != null && primaryPlayer.entityId == entityId) return null;
+        
+        throw new ClientInfoNotFoundException("Not found ClientInfo by entity id: " + entityId);
     }
 
     [CanBeNull]
     public static ClientInfo GetClientInfo(string playerName)
     {
-        return SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.GetForPlayerName(playerName);
+        var clientInfo = SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.GetForPlayerName(playerName);
+        if (clientInfo != null) return clientInfo;
+
+        var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
+        if (primaryPlayer != null && primaryPlayer.EntityName.EqualsCaseInsensitive(playerName)) return null;
+        
+        throw new ClientInfoNotFoundException("Not found ClientInfo by player name: " + playerName);
     }
 
     [CanBeNull]
@@ -106,17 +123,17 @@ public static class Utility
             GameManager.Instance.ChatMessageClient(type, -1, message, sender, null);
     }
 
-    public static void Teleport(this ClientInfo client, Location location)
+    public static void Teleport(this ClientInfo clientInfo, Location location)
     {
-        client.Teleport(location.GetPosition(), location.GetRotation());
+        clientInfo.Teleport(location.GetPosition(), location.GetRotation());
     }
 
-    public static void Teleport(this ClientInfo client, Vector3 position, Vector3? rotation = null)
+    public static void Teleport(this ClientInfo clientInfo, Vector3 position, Vector3? rotation = null)
     {
         var netPackageTeleportPlayer =
             NetPackageManager.GetPackage<NetPackageTeleportPlayer>().Setup(position, rotation);
-        if (client != null)
-            client.SendPackage(netPackageTeleportPlayer);
+        if (clientInfo != null)
+            clientInfo.SendPackage(netPackageTeleportPlayer);
         else
             netPackageTeleportPlayer.ProcessPackage();
     }

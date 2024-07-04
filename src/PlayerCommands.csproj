@@ -33,6 +33,7 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="ClientInfoNotFoundException.cs" />
         <Compile Include="CommandManager.cs" />
         <Compile Include="CommandSender.cs" />
         <Compile Include="Command\BackCommand.cs" />
