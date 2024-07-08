@@ -2,7 +2,7 @@
 
 public static class HomeCommand
 {
-    public static void Home(CommandSender sender, string[] args)
+    public static void Home(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("home"))
         {
@@ -11,10 +11,12 @@ public static class HomeCommand
 
         if (args.Length == 0)
         {
-            if (DataManager.PlayerDataDict[sender.PlayerId].homes.TryGetValue("default", out var location))
+            if (sender.UserData.Homes.TryGetValue("default", out var location))
             {
-                sender.Teleport(location);
-                sender.SendMessage(Message.Get("Home.Finish.Default"));
+                if (TeleportHandler.Teleport(sender, location))
+                {
+                    sender.SendMessage(Message.Get("Home.Success.Default"));
+                }
             }
             else
             {
@@ -23,10 +25,12 @@ public static class HomeCommand
         }
         else
         {
-            if (DataManager.PlayerDataDict[sender.PlayerId].homes.TryGetValue(args[0], out var location))
+            if (sender.UserData.Homes.TryGetValue(args[0], out var location))
             {
-                sender.Teleport(location);
-                sender.SendMessage(Message.Get("Home.Finish").Format(args[0]));
+                if (TeleportHandler.Teleport(sender, location))
+                {
+                    sender.SendMessage(Message.Get("Home.Success").Format(args[0]));
+                }
             }
             else
             {
@@ -35,7 +39,7 @@ public static class HomeCommand
         }
     }
 
-    public static void SetHome(CommandSender sender, string[] args)
+    public static void SetHome(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("sethome"))
         {
@@ -44,17 +48,17 @@ public static class HomeCommand
 
         if (args.Length == 0)
         {
-            DataManager.PlayerDataDict[sender.PlayerId].homes["default"] = sender.Location;
-            sender.SendMessage(Message.Get("SetHome.Finish.Default"));
+            sender.UserData.Homes["default"] = sender.Location;
+            sender.SendMessage(Message.Get("SetHome.Success.Default"));
         }
         else
         {
-            DataManager.PlayerDataDict[sender.PlayerId].homes[args[0]] = sender.Location;
-            sender.SendMessage(Message.Get("SetHome.Finish").Format(args[0]));
+            sender.UserData.Homes[args[0]] = sender.Location;
+            sender.SendMessage(Message.Get("SetHome.Success").Format(args[0]));
         }
     }
 
-    public static void DelHome(CommandSender sender, string[] args)
+    public static void DelHome(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("delhome"))
         {
@@ -63,30 +67,29 @@ public static class HomeCommand
 
         if (args.Length == 0)
         {
-            DataManager.PlayerDataDict[sender.PlayerId].homes.Remove("default");
-            sender.SendMessage(Message.Get("DelHome.Finish.Default"));
+            sender.UserData.Homes.Remove("default");
+            sender.SendMessage(Message.Get("DelHome.Success.Default"));
         }
         else
         {
-            DataManager.PlayerDataDict[sender.PlayerId].homes.Remove(args[0]);
-            sender.SendMessage(Message.Get("DelHome.Finish").Format(args[0]));
+            sender.UserData.Homes.Remove(args[0]);
+            sender.SendMessage(Message.Get("DelHome.Success").Format(args[0]));
         }
     }
 
-    public static void ListHome(CommandSender sender, string[] args)
+    public static void ListHome(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("listhome"))
         {
             return;
         }
 
-        var homes = DataManager.PlayerDataDict[sender.PlayerId].homes;
-        foreach (var keyValuePair in homes)
+        var homes = sender.UserData.Homes;
+        foreach (var (key, value) in homes)
         {
-            sender.SendMessage(
-                Message.Get("ListHome.Item").Format(keyValuePair.Key, keyValuePair.Value.ToPositionString()));
+            sender.SendMessage(Message.Get("ListHome.Item").Format(key, value.ToPositionString()));
         }
 
-        sender.SendMessage(Message.Get("ListHome.Finish").Format(homes.Count));
+        sender.SendMessage(Message.Get("ListHome.Success").Format(homes.Count));
     }
 }

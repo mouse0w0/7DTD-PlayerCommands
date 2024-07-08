@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
@@ -8,6 +9,9 @@ public static class Config
 {
     public static Dictionary<string, string> Commands { get; private set; }
     public static HashSet<string> PlayerCommands { get; private set; }
+    public static TimeSpan TeleportCooldown { get; private set; }
+    public static TimeSpan TeleportRequestTimeout { get; private set; }
+    public static int TeleportMaxRequests { get; private set; }
 
     public static void Load()
     {
@@ -28,17 +32,16 @@ public static class Config
             var commandName = commandPair.Key;
             foreach (var commandAlias in commandPair.Value)
             {
-                if (Commands.ContainsKey(commandAlias))
+                if (!Commands.TryAdd(commandAlias, commandName))
                 {
                     Log.Warning($"[PlayerCommands] Duplicate alias `{commandAlias}` in command `{commandName}`");
-                }
-                else
-                {
-                    Commands.Add(commandAlias, commandName);
                 }
             }
         }
         PlayerCommands = root.GetValue("PlayerCommands")!.ToObject<HashSet<string>>();
+        TeleportCooldown = TimeSpan.FromSeconds(root.GetValue("TeleportCooldown")!.ToObject<double>());
+        TeleportRequestTimeout = TimeSpan.FromSeconds(root.GetValue("TeleportRequestTimeout")!.ToObject<double>());
+        TeleportMaxRequests = root.GetValue("TeleportMaxRequests")!.ToObject<int>();
 
         Log.Out("[PlayerCommands] Loaded config");
     }

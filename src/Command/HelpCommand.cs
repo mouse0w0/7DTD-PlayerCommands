@@ -2,16 +2,13 @@
 
 public static class HelpCommand
 {
-    public static void Help(CommandSender sender, string[] args)
+    public static void Help(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("help"))
         {
             return;
         }
         
-        foreach (var s in Message.GetArray("Help"))
-        {
-            sender.SendMessage(s);
-        }
+        sender.SendMessage(Message.GetArray("Help"));
     }
 }

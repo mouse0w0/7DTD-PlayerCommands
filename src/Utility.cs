@@ -49,26 +49,6 @@ public static class Utility
     }
 
     [CanBeNull]
-    public static EntityPlayer FindEntityPlayer(string playerName)
-    {
-        List<EntityPlayer> fuzzyEntityPlayers = new();
-        foreach (var entityPlayer in GameManager.Instance.World.Players.list)
-        {
-            if (entityPlayer.EntityName.EqualsCaseInsensitive(playerName))
-            {
-                return entityPlayer;
-            }
-
-            if (entityPlayer.EntityName.ContainsCaseInsensitive(playerName))
-            {
-                fuzzyEntityPlayers.Add(entityPlayer);
-            }
-        }
-
-        return fuzzyEntityPlayers.Count == 1 ? fuzzyEntityPlayers[0] : null;
-    }
-
-    [CanBeNull]
     public static ClientInfo GetClientInfo(int entityId)
     {
         var clientInfo = SingletonMonoBehaviour<ConnectionManager>.Instance.Clients.ForEntityId(entityId);
@@ -76,7 +56,7 @@ public static class Utility
 
         var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
         if (primaryPlayer != null && primaryPlayer.entityId == entityId) return null;
-        
+
         throw new ClientInfoNotFoundException("Not found ClientInfo by entity id: " + entityId);
     }
 
@@ -88,7 +68,7 @@ public static class Utility
 
         var primaryPlayer = GameManager.Instance.World.GetPrimaryPlayer();
         if (primaryPlayer != null && primaryPlayer.EntityName.EqualsCaseInsensitive(playerName)) return null;
-        
+
         throw new ClientInfoNotFoundException("Not found ClientInfo by player name: " + playerName);
     }
 
@@ -98,19 +78,9 @@ public static class Utility
         return GetClientInfo(entityPlayer.entityId);
     }
 
-    public static void SendMessage(int receiverId, string message)
-    {
-        SendMessage(receiverId, null, message);
-    }
-
     public static void SendMessage(this ClientInfo receiver, string message)
     {
         SendMessage(receiver, null, message);
-    }
-
-    public static void SendMessage(int receiverId, string sender, string message, EChatType type = EChatType.Global)
-    {
-        SendMessage(GetClientInfo(receiverId), sender, message, type);
     }
 
     public static void SendMessage(this ClientInfo receiver, string sender, string message,
@@ -125,7 +95,7 @@ public static class Utility
 
     public static void Teleport(this ClientInfo clientInfo, Location location)
     {
-        clientInfo.Teleport(location.GetPosition(), location.GetRotation());
+        clientInfo.Teleport(location.Position, location.Rotation);
     }
 
     public static void Teleport(this ClientInfo clientInfo, Vector3 position, Vector3? rotation = null)

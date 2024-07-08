@@ -5,7 +5,7 @@ using PlayerCommands.Command;
 
 namespace PlayerCommands;
 
-public delegate void CommandHandler(CommandSender sender, string[] args);
+public delegate void CommandHandler(User sender, string[] args);
 
 [HarmonyPatch]
 public static class CommandManager
@@ -16,8 +16,19 @@ public static class CommandManager
     {
         Commands["help"] = HelpCommand.Help;
         Commands["tp"] = TpCommand.Tp;
-        Commands["tph"] = TpCommand.TpHere;
+        Commands["tphere"] = TpCommand.TpHere;
+        Commands["tpall"] = TpCommand.TpAll;
+        Commands["tpcancel"] = TpCommand.TpCancel;
         Commands["tpaccept"] = TpCommand.TpAccept;
+        Commands["tpdeny"] = TpCommand.TpDeny;
+        Commands["tptoggle"] = TpCommand.TpToggle;
+        Commands["tpauto"] = TpCommand.TpAuto;
+        Commands["suicide"] = SuicideCommand.Suicide;
+        Commands["back"] = BackCommand.Back;
+        Commands["home"] = HomeCommand.Home;
+        Commands["sethome"] = HomeCommand.SetHome;
+        Commands["delhome"] = HomeCommand.DelHome;
+        Commands["listhome"] = HomeCommand.ListHome;
         Commands["spawn"] = SpawnCommand.Spawn;
         Commands["setspawn"] = SpawnCommand.SetSpawn;
         Commands["delspawn"] = SpawnCommand.DelSpawn;
@@ -25,11 +36,8 @@ public static class CommandManager
         Commands["setwarp"] = WarpCommand.SetWarp;
         Commands["delwarp"] = WarpCommand.DelWarp;
         Commands["listwarp"] = WarpCommand.ListWarp;
-        Commands["home"] = HomeCommand.Home;
-        Commands["sethome"] = HomeCommand.SetHome;
-        Commands["delhome"] = HomeCommand.DelHome;
-        Commands["listhome"] = HomeCommand.ListHome;
-        Commands["back"] = BackCommand.Back;
+        // TODO tprandom - 随机传送到某个地方
+        // TODO ignore - 忽略某个玩家
     }
 
     [HarmonyPatch(typeof(GameManager), nameof(GameManager.ChatMessageServer))]
@@ -41,14 +49,14 @@ public static class CommandManager
         if (_senderEntityId == -1) return true;
         
         _msg = _msg.Trim();
-        
+         
         var idx = _msg.IndexOf(' ');
         var name = (idx == -1 ? _msg : _msg.Substring(0, idx)).ToLower();
         if (!Config.Commands.TryGetValue(name, out var command)) return true;
         Log.Out($"{_mainName} (from {_cInfo.GetPlayerId()}, entity id {_senderEntityId}) issued command: {_msg}");
         if (!Commands.TryGetValue(command, out var handler)) return true;
-        var args = idx == -1 ? Array.Empty<string>() : _msg.Substring(idx + 1).Split(' ');
-        handler(new CommandSender(_senderEntityId, _mainName, _cInfo), args);
+        var args = idx == -1 ? Array.Empty<string>() : _msg.Substring(idx + 1).Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        handler(_cInfo.ToUser(), args);
         return false;
     }
 }

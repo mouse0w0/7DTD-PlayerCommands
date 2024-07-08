@@ -35,21 +35,27 @@
     <ItemGroup>
         <Compile Include="ClientInfoNotFoundException.cs" />
         <Compile Include="CommandManager.cs" />
-        <Compile Include="CommandSender.cs" />
+        <Compile Include="Events.cs" />
+        <Compile Include="TeleportHandler.cs" />
+        <Compile Include="TeleportRequest.cs" />
+        <Compile Include="TeleportRequestList.cs" />
+        <Compile Include="User.cs" />
         <Compile Include="Command\BackCommand.cs" />
         <Compile Include="Command\HelpCommand.cs" />
         <Compile Include="Command\HomeCommand.cs" />
         <Compile Include="Command\SpawnCommand.cs" />
+        <Compile Include="Command\SuicideCommand.cs" />
         <Compile Include="Command\TpCommand.cs" />
         <Compile Include="Command\WarpCommand.cs" />
         <Compile Include="Config.cs" />
         <Compile Include="ConsoleCmdMod.cs" />
-        <Compile Include="DataManager.cs" />
+        <Compile Include="WorldData.cs" />
         <Compile Include="Location.cs" />
         <Compile Include="Main.cs" />
         <Compile Include="Message.cs" />
-        <Compile Include="PlayerData.cs" />
+        <Compile Include="UserData.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="UserManager.cs" />
         <Compile Include="Utility.cs" />
     </ItemGroup>
     <ItemGroup>

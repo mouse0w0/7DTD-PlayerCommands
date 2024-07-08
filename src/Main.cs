@@ -16,8 +16,11 @@ public class Main : IModApi
 
         new Harmony("com.github.mouse0w0.playercommands").PatchAll();
         
-        ModEvents.PlayerSpawnedInWorld.RegisterHandler(DataManager.OnPlayerSpawnedInWorld);
-        ModEvents.PlayerDisconnected.RegisterHandler(DataManager.OnPlayerDisconnected);
+        Events.WorldCreated.RegisterHandler(WorldData.OnWorldCreated);
+        Events.WorldUnloading.RegisterHandler(WorldData.OnWorldUnloading);
+        Events.WorldUnloading.RegisterHandler(UserManager.OnWorldUnloading);
+        ModEvents.PlayerSpawnedInWorld.RegisterHandler(UserManager.OnPlayerSpawnedInWorld);
+        ModEvents.PlayerDisconnected.RegisterHandler(UserManager.OnPlayerDisconnected);
         ModEvents.PlayerSpawnedInWorld.RegisterHandler(SpawnCommand.OnPlayerSpawnedInWorld);
         ModEvents.EntityKilled.RegisterHandler(BackCommand.OnEntityKilled);
     }

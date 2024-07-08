@@ -19,16 +19,16 @@ public static class Message
 
         Log.Out("[PlayerCommands] Loading message");
         Messages.Clear();
-        foreach (var keyValuePair in JObject.Parse(File.ReadAllText(file)))
+        foreach (var (key, value) in JObject.Parse(File.ReadAllText(file)))
         {
-            if (keyValuePair.Value == null) continue;
-            if (keyValuePair.Value.Type == JTokenType.Array)
+            if (value == null) continue;
+            if (value.Type == JTokenType.Array)
             {
-                Messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string[]>();
+                Messages[key] = value.ToObject<string[]>();
             }
             else
             {
-                Messages[keyValuePair.Key] = keyValuePair.Value.ToObject<string>();
+                Messages[key] = value.ToObject<string>();
             }
         }
 

@@ -2,23 +2,25 @@
 
 public static class WarpCommand
 {
-    public static void Warp(CommandSender sender, string[] args)
+    public static void Warp(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("warp"))
         {
             return;
         }
-        
+
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
             return;
         }
 
-        if (DataManager.warps.TryGetValue(args[0], out var location))
+        if (WorldData.Warps.TryGetValue(args[0], out var location))
         {
-            sender.Teleport(location);
-            sender.SendMessage(Message.Get("Warp.Finish").Format(args[0]));
+            if (TeleportHandler.Teleport(sender, location))
+            {
+                sender.SendMessage(Message.Get("Warp.Success").Format(args[0]));
+            }
         }
         else
         {
@@ -26,7 +28,7 @@ public static class WarpCommand
         }
     }
 
-    public static void SetWarp(CommandSender sender, string[] args)
+    public static void SetWarp(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("setwarp"))
         {
@@ -39,18 +41,18 @@ public static class WarpCommand
             return;
         }
 
-        if (DataManager.warps.ContainsKey(args[0]))
+        if (WorldData.Warps.ContainsKey(args[0]))
         {
             sender.SendMessage(Message.Get("SetWarp.Exists").Format(args[0]));
         }
         else
         {
-            DataManager.warps.Add(args[0], sender.Location);
-            sender.SendMessage(Message.Get("SetWrap.Finish").Format(args[0]));
+            WorldData.Warps.Add(args[0], sender.Location);
+            sender.SendMessage(Message.Get("SetWrap.Success").Format(args[0]));
         }
     }
 
-    public static void DelWarp(CommandSender sender, string[] args)
+    public static void DelWarp(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("delwarp"))
         {
@@ -63,9 +65,9 @@ public static class WarpCommand
             return;
         }
 
-        if (DataManager.warps.Remove(args[0]))
+        if (WorldData.Warps.Remove(args[0]))
         {
-            sender.SendMessage(Message.Get("DelWarp.Finish").Format(args[0]));
+            sender.SendMessage(Message.Get("DelWarp.Success").Format(args[0]));
         }
         else
         {
@@ -73,19 +75,18 @@ public static class WarpCommand
         }
     }
 
-    public static void ListWarp(CommandSender sender, string[] args)
+    public static void ListWarp(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("listwarp"))
-        {
+        { 
             return;
         }
 
-        foreach (var keyValuePair in DataManager.warps)
+        foreach (var (key, value) in WorldData.Warps)
         {
-            sender.SendMessage(
-                Message.Get("ListWarp.Item").Format(keyValuePair.Key, keyValuePair.Value.ToPositionString()));
+            sender.SendMessage(Message.Get("ListWarp.Item").Format(key, value.ToPositionString()));
         }
 
-        sender.SendMessage(Message.Get("ListWarp.Finish").Format(DataManager.warps.Count));
+        sender.SendMessage(Message.Get("ListWarp.Success").Format(WorldData.Warps.Count));
     }
 }

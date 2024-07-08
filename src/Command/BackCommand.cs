@@ -1,35 +1,36 @@
-﻿using System.Collections.Generic;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace PlayerCommands.Command;
 
 [HarmonyPatch]
 public static class BackCommand
 {
-    private static readonly Dictionary<int, Location> PrevLocation = new();
-
-    public static void Back(CommandSender sender, string[] args)
+    public static void Back(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("back"))
         {
             return;
         }
 
-        if (!PrevLocation.TryGetValue(sender.entityId, out var location))
+        if (sender.PrevLocation is {} prevLocation)
+        {
+            if (TeleportHandler.Teleport(sender, prevLocation))
+            {
+                sender.SendMessage(Message.Get("Back.Success"));
+            }
+        }
+        else
         {
             sender.SendMessage(Message.Get("Back.NotFound"));
-            return;
         }
-
-        sender.Teleport(location);
-        sender.SendMessage(Message.Get("Back.Finish"));
     }
 
     public static void OnEntityKilled(Entity entity, Entity killer)
     {
         if (Utility.IsClient()) return;
-        if (entity is not EntityPlayer) return;
-        PrevLocation[entity.entityId] = entity.GetLocation();
+        if (entity is not EntityPlayer entityPlayer) return;
+        var user = entityPlayer.ToUser();
+        user.PrevLocation = user.Location;
     }
 
     [HarmonyPatch(typeof(ClientInfo), nameof(ClientInfo.SendPackage))]
@@ -37,9 +38,8 @@ public static class BackCommand
     public static void ClientInfo_SendPackage_Prefix(ClientInfo __instance, NetPackage _package)
     {
         if (_package is not NetPackageTeleportPlayer) return;
-        var entityPlayer = __instance.GetEntityPlayer();
-        if (entityPlayer == null) return;
-        PrevLocation[entityPlayer.entityId] = entityPlayer.GetLocation();
+        var user = __instance.ToUser();
+        user.PrevLocation = user.Location;
     }
 
     [HarmonyPatch(typeof(NetPackageTeleportPlayer), nameof(NetPackageTeleportPlayer.ProcessPackage))]
@@ -49,8 +49,7 @@ public static class BackCommand
     {
         if (Utility.IsClient()) return;
         if (_world == null) return;
-        var entityPlayer = _world.GetPrimaryPlayer();
-        if (entityPlayer == null) return;
-        PrevLocation[entityPlayer.entityId] = entityPlayer.GetLocation();
+        var user = UserManager.GetPrimaryUser();
+        user.PrevLocation = user.Location;
     }
 }

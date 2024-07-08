@@ -4,17 +4,19 @@ namespace PlayerCommands.Command;
 
 public static class SpawnCommand
 {
-    public static void Spawn(CommandSender sender, string[] args)
+    public static void Spawn(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("spawn"))
         {
             return;
         }
-        
-        if (DataManager.spawn != null)
+
+        if (WorldData.Spawn != null)
         {
-            sender.Teleport(DataManager.spawn ?? throw new NullReferenceException());
-            sender.SendMessage(Message.Get("Spawn.Finish"));
+            if (TeleportHandler.Teleport(sender, WorldData.Spawn ?? throw new NullReferenceException()))
+            {
+                sender.SendMessage(Message.Get("Spawn.Success"));
+            }
         }
         else
         {
@@ -22,33 +24,33 @@ public static class SpawnCommand
         }
     }
 
-    public static void SetSpawn(CommandSender sender, string[] args)
+    public static void SetSpawn(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("setspawn"))
         {
             return;
         }
 
-        DataManager.spawn = sender.Location;
-        sender.SendMessage(Message.Get("SetSpawn.Finish"));
+        WorldData.Spawn = sender.Location;
+        sender.SendMessage(Message.Get("SetSpawn.Success"));
     }
 
-    public static void DelSpawn(CommandSender sender, string[] args)
+    public static void DelSpawn(User sender, string[] args)
     {
         if (sender.IsNoPermissionAndSendMessage("delspawn"))
         {
             return;
         }
-        
-        DataManager.spawn = null;
-        sender.SendMessage(Message.Get("DelSpawn.Finish"));
+
+        WorldData.Spawn = null;
+        sender.SendMessage(Message.Get("DelSpawn.Success"));
     }
 
     public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)
     {
         if (Utility.IsClient()) return;
         if (type is not (RespawnType.NewGame or RespawnType.EnterMultiplayer)) return;
-        if (DataManager.spawn == null) return;
-        clientInfo.Teleport(DataManager.spawn ?? throw new Exception("Cannot reach"));
+        if (WorldData.Spawn == null) return;
+        clientInfo.Teleport(WorldData.Spawn ?? throw new Exception("Cannot reach"));
     }
 }
