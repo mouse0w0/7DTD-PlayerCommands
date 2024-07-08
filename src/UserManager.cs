@@ -128,8 +128,6 @@ public static class UserManager
 
     public static void OnPlayerDisconnected(ClientInfo clientInfo, bool shutdown)
     {
-        if (Utility.IsClient()) return;
-
         var user = clientInfo.ToUser();
         if (user == null) return;
 
@@ -142,7 +140,6 @@ public static class UserManager
 
     public static void OnWorldUnloading()
     {
-        if (Utility.IsClient()) return;
         foreach (var user in EntityIdToUser.Values)
         {
             user.Save();

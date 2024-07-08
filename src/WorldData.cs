@@ -10,13 +10,11 @@ public static class WorldData
 
     public static void OnWorldCreated()
     {
-        if (Utility.IsClient()) return;
         Load();
     }
 
     public static void OnWorldUnloading()
     {
-        if (Utility.IsClient()) return;
         Save();
         Cleanup();
     }
