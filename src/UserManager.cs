@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace PlayerCommands;
@@ -32,7 +33,8 @@ public static class UserManager
                     jObject.Add("Homes", jHomes);
                 }
 
-                Utility.WriteAllText(UserDataDirectory + "/" + Path.GetFileName(legacyFile), jObject.ToString());
+                Utility.WriteAllText(UserDataDirectory + "/" + Path.GetFileName(legacyFile),
+                    jObject.ToString(Formatting.None));
             }
 
             Directory.Move(LegacyUserDataDirectory, LegacyUserDataDirectory + "_deletable");
