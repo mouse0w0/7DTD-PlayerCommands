@@ -6,14 +6,14 @@ public static class TpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
         var target = UserManager.FindUserByPlayerName(args[0]);
         if (target == null)
         {
-            sender.SendMessage(Message.Get("NotFoundPlayer").Format(args[0]));
+            sender.SendMessage(Message.Get("Command.NotFoundPlayer").Format(args[0]));
             return;
         }
 
@@ -49,14 +49,14 @@ public static class TpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
         var target = UserManager.FindUserByPlayerName(args[0]);
         if (target == null)
         {
-            sender.SendMessage(Message.Get("NotFoundPlayer").Format(args[0]));
+            sender.SendMessage(Message.Get("Command.NotFoundPlayer").Format(args[0]));
             return;
         }
 
@@ -115,14 +115,14 @@ public static class TpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
         var target = UserManager.FindUserByPlayerName(args[0]);
         if (target == null)
         {
-            sender.SendMessage(Message.Get("NotFoundPlayer").Format(args[0]));
+            sender.SendMessage(Message.Get("Command.NotFoundPlayer").Format(args[0]));
             return;
         }
 

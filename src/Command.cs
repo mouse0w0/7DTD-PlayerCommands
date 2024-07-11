@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace PlayerCommands;
 
@@ -16,6 +18,14 @@ public class Command
         Executor = executor;
     }
 
-    public List<string> Labels { get; set; }
-    public int PermissionLevel { get; set; }
+    public List<string> Labels { get; private set; }
+    public int PermissionLevel { get; private set; }
+    public TimeSpan Cooldown { get; private set; }
+
+    internal void Load(JToken jToken)
+    {
+        Labels = jToken["Labels"]?.ToObject<List<string>>() ?? new List<string>();
+        PermissionLevel = jToken["PermissionLevel"]?.ToObject<int>() ?? 0;
+        Cooldown = TimeSpan.FromSeconds(jToken["Cooldown"]?.ToObject<double>() ?? 0);
+    }
 }

@@ -19,6 +19,7 @@ public class User
     public UserData UserData { get; }
 
     public Location? PrevLocation { get; set; }
+    public Dictionary<string, DateTime> LastExecuteCommandTime { get; } = new();
     public DateTime LastTeleportTime { get; set; }
     public TeleportRequestList TeleportRequestList { get; } = new();
 

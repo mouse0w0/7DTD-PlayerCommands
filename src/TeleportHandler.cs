@@ -7,17 +7,21 @@ public static class TeleportHandler
 {
     public static bool Teleport(User user, Vector3 position, Vector3? rotation = null)
     {
-        var now = DateTime.Now;
-        var passed = now - user.LastTeleportTime;
-        var remaining = Config.TeleportCooldown - passed;
-        if (remaining > TimeSpan.Zero)
+        if (Config.TeleportCooldown > TimeSpan.Zero)
         {
-            user.SendMessage(Message.Get("Tp.Cooldown").Format((int)remaining.TotalSeconds));
-            return false;
+            var now = DateTime.Now;
+            var passed = now - user.LastTeleportTime;
+            var remaining = Config.TeleportCooldown - passed;
+            if (remaining > TimeSpan.Zero)
+            {
+                user.SendMessage(Message.Get("Tp.Cooldown").Format((int)remaining.TotalSeconds));
+                return false;
+            }
+
+            user.LastTeleportTime = now;
         }
 
         user.Teleport(position, rotation);
-        user.LastTeleportTime = now;
         return true;
     }
 

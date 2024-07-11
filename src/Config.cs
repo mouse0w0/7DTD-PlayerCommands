@@ -25,9 +25,9 @@ public static class Config
 
         CommandManager.LoadConfig(root["Commands"]!);
 
-        TeleportCooldown = TimeSpan.FromSeconds(root["TeleportCooldown"]!.ToObject<double>());
-        TeleportRequestTimeout = TimeSpan.FromSeconds(root["TeleportRequestTimeout"]!.ToObject<double>());
-        TeleportMaxRequests = root["TeleportMaxRequests"]!.ToObject<int>();
+        TeleportCooldown = TimeSpan.FromSeconds(root["TeleportCooldown"]?.ToObject<double>() ?? 0);
+        TeleportRequestTimeout = TimeSpan.FromSeconds(root["TeleportRequestTimeout"]?.ToObject<double>() ?? 0);
+        TeleportMaxRequests = root["TeleportMaxRequests"]?.ToObject<int>() ?? 0;
 
         Log.Out("[PlayerCommands] Loaded config");
     }

@@ -5,112 +5,135 @@
       // 执行指令的前缀
       "Labels": ["/help", "/?"],
       // 执行指令需要的权限等级，1000为普通玩家，0为管理员
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      // 指令冷却时间，设置为0则不冷却，单位：秒
+      "Cooldown": 0
     },
     // 请求传送到玩家
     "tp": {
       "Labels": ["/tp"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 请求玩家传送到你
     "tphere": {
       "Labels": ["/tphere", "/tph"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 请求所有玩家传送到你
     "tpall": {
       "Labels": ["/tpall"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 取消传送请求
     "tpcancel": {
       "Labels": ["/tpcancel"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 开关接收传送请求
     "tptoggle": {
       "Labels": ["/tptoggle"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 开关自动接受传送请求
     "tpauto": {
       "Labels": ["/tpauto"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 接受传送请求
     "tpaccept": {
       "Labels": ["/tpaccept", "/ok"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 拒绝传送请求
     "tpdeny": {
       "Labels": ["/tpdeny", "/no"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 自杀
     "suicide": {
       "Labels": ["/suicide", "/zs"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 回到上一地点
     "back": {
       "Labels": ["/back", "/bk", "/hq"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 回家
     "home": {
       "Labels": ["/home", "/hm", "/hj"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 设置家
     "sethome": {
       "Labels": ["/sethome", "/shm", "/szj"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 删除家
     "delhome": {
       "Labels": ["/delhome", "/dhm", "/scj"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 列出家
     "listhome": {
       "Labels": ["/listhome", "/lhm", "/lcj"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 传送到出生点
     "spawn": {
       "Labels": ["/spawn", "/sp", "/hc"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 设置出生点
     "setspawn": {
       "Labels": ["/setspawn", "/ssp"],
-      "PermissionLevel": 0
+      "PermissionLevel": 0,
+      "Cooldown": 0
     },
     // 删除出生点
     "delspawn": {
       "Labels": ["/delspawn", "/dsp"],
-      "PermissionLevel": 0
+      "PermissionLevel": 0,
+      "Cooldown": 0
     },
     // 传送到地标
     "warp": {
       "Labels": ["/warp", "/wp"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     },
     // 设置地标
     "setwarp": {
       "Labels": ["/setwarp", "/swp"],
-      "PermissionLevel": 0
+      "PermissionLevel": 0,
+      "Cooldown": 0
     },
     // 删除地标
     "delwarp": {
       "Labels": ["/delwarp", "/dwp"],
-      "PermissionLevel": 0
+      "PermissionLevel": 0,
+      "Cooldown": 0
     },
     // 列出地标
     "listwarp": {
       "Labels": ["/listwarp", "/lwp"],
-      "PermissionLevel": 1000
+      "PermissionLevel": 1000,
+      "Cooldown": 0
     }
   },
   // 传送冷却时间，设置为0则不冷却，单位：秒

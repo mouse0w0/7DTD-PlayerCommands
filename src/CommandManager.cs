@@ -55,7 +55,8 @@ public static class CommandManager
             var commandToken = jToken[name];
             if (commandToken == null) continue;
 
-            commandToken.PopulateObject(command);
+            command.Load(commandToken);
+
             foreach (var label in command.Labels)
             {
                 if (!LabelToCommands.TryAdd(label, command))
@@ -87,8 +88,25 @@ public static class CommandManager
 
         if (!sender.HasPermission(command))
         {
-            sender.SendMessage(Message.Get("NoEnoughPerm"));
+            sender.SendMessage(Message.Get("Command.NoEnoughPerm"));
             return false;
+        }
+
+        if (command.Cooldown > TimeSpan.Zero)
+        {
+            var now = DateTime.Now;
+            if (sender.LastExecuteCommandTime.TryGetValue(command.Name, out var last))
+            {
+                var passed = now - last;
+                var remaining = command.Cooldown - passed;
+                if (remaining > TimeSpan.Zero)
+                {
+                    sender.SendMessage(Message.Get("Command.Cooldown").Format((int)remaining.TotalSeconds));
+                    return false;
+                }
+            }
+
+            sender.LastExecuteCommandTime[command.Name] = now;
         }
 
         try

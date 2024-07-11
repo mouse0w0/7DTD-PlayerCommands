@@ -6,7 +6,7 @@ public static class WarpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
@@ -27,7 +27,7 @@ public static class WarpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
@@ -46,7 +46,7 @@ public static class WarpCommand
     {
         if (args.Length == 0)
         {
-            sender.SendMessage(Message.Get("NoEnoughParam"));
+            sender.SendMessage(Message.Get("Command.NoEnoughParam"));
             return;
         }
 
