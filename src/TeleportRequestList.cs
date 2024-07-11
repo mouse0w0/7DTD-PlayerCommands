@@ -16,19 +16,22 @@ public class TeleportRequestList
         {
             _list.Remove(oldRequest);
         }
-        
+
         _list.Add(request);
         _playerNameDict.Add(request.Requester.PlayerName, request);
 
-        var needRemoved = _list.Count - Config.TeleportMaxRequests;
-        if (needRemoved > 0)
+        if (Config.TeleportMaxRequests > 0)
         {
-            for (var i = 0; i < needRemoved; i++)
+            var needRemoved = _list.Count - Config.TeleportMaxRequests;
+            if (needRemoved > 0)
             {
-                _playerNameDict.Remove(_list[i].Requester.PlayerName);
-            }
+                for (var i = 0; i < needRemoved; i++)
+                {
+                    _playerNameDict.Remove(_list[i].Requester.PlayerName);
+                }
 
-            _list.RemoveRange(0, needRemoved);
+                _list.RemoveRange(0, needRemoved);
+            }
         }
     }
 
@@ -64,7 +67,7 @@ public class TeleportRequestList
             {
                 _playerNameDict.Remove(playerNameKey, out var tempRequest);
                 _list.Remove(tempRequest);
-                
+
                 if (Config.TeleportRequestTimeout > TimeSpan.Zero &&
                     DateTime.Now - tempRequest.Time >= Config.TeleportRequestTimeout)
                 {
@@ -91,7 +94,7 @@ public class TeleportRequestList
             {
                 _playerNameDict.Remove(playerNameKey, out var tempRequest);
                 _list.Remove(tempRequest);
-                
+
                 if (Config.TeleportRequestTimeout > TimeSpan.Zero &&
                     DateTime.Now - tempRequest.Time >= Config.TeleportRequestTimeout)
                 {
@@ -114,7 +117,7 @@ public class TeleportRequestList
         {
             _playerNameDict.Remove(foundPlayerName, out var tempRequest);
             _list.Remove(tempRequest);
-            
+
             if (Config.TeleportRequestTimeout > TimeSpan.Zero &&
                 DateTime.Now - tempRequest.Time >= Config.TeleportRequestTimeout)
             {
