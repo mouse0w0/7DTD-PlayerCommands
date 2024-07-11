@@ -34,19 +34,20 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="ClientInfoNotFoundException.cs" />
+      <Compile Include="Command.cs"/>
         <Compile Include="CommandManager.cs" />
         <Compile Include="Events.cs" />
         <Compile Include="TeleportHandler.cs" />
         <Compile Include="TeleportRequest.cs" />
         <Compile Include="TeleportRequestList.cs" />
         <Compile Include="User.cs" />
-        <Compile Include="Command\BackCommand.cs" />
-        <Compile Include="Command\HelpCommand.cs" />
-        <Compile Include="Command\HomeCommand.cs" />
-        <Compile Include="Command\SpawnCommand.cs" />
-        <Compile Include="Command\SuicideCommand.cs" />
-        <Compile Include="Command\TpCommand.cs" />
-        <Compile Include="Command\WarpCommand.cs" />
+      <Compile Include="Commands\BackCommand.cs"/>
+      <Compile Include="Commands\HelpCommand.cs"/>
+      <Compile Include="Commands\HomeCommand.cs"/>
+      <Compile Include="Commands\SpawnCommand.cs"/>
+      <Compile Include="Commands\SuicideCommand.cs"/>
+      <Compile Include="Commands\TpCommand.cs"/>
+      <Compile Include="Commands\WarpCommand.cs"/>
         <Compile Include="Config.cs" />
         <Compile Include="ConsoleCmdMod.cs" />
         <Compile Include="WorldData.cs" />
@@ -59,10 +60,10 @@
         <Compile Include="Utility.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="Config.json">
+      <Content Include="Config.jsonc">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <Content Include="Message.json">
+      <Content Include="Message.jsonc">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <Content Include="ModInfo.xml">

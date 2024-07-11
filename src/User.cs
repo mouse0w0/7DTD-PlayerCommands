@@ -30,18 +30,9 @@ public class User
     public Vector3 Rotation => EntityPlayer.rotation;
     public Location Location => EntityPlayer.GetLocation();
 
-    public bool IsNoPermissionAndSendMessage(string permission)
-    {
-        if (HasPermission(permission))
-        {
-            return false;
-        }
+    public bool HasPermission(Command command) => ClientInfo.HasPermission(command.PermissionLevel);
 
-        SendMessage(Message.Get("NoEnoughPerm"));
-        return true;
-    }
-
-    public bool HasPermission(string permission) => ClientInfo.HasPermission(permission);
+    public bool HasPermission(int permissionLevel) => ClientInfo.HasPermission(permissionLevel);
 
     public void SendMessage(string message) => ClientInfo.SendMessage(message);
 

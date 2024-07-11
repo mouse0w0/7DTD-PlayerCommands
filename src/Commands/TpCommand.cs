@@ -1,14 +1,9 @@
-﻿namespace PlayerCommands.Command;
+﻿namespace PlayerCommands.Commands;
 
 public static class TpCommand
 {
-    public static void Tp(User sender, string[] args)
+    public static void Tp(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("tp"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
@@ -50,13 +45,8 @@ public static class TpCommand
         }
     }
 
-    public static void TpHere(User sender, string[] args)
+    public static void TpHere(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("tphere"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
@@ -98,13 +88,8 @@ public static class TpCommand
         }
     }
 
-    public static void TpAll(User sender, string[] args)
+    public static void TpAll(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("tpall"))
-        {
-            return;
-        }
-
         foreach (var target in UserManager.GetUsers())
         {
             if (target == sender) continue;
@@ -126,7 +111,7 @@ public static class TpCommand
         sender.SendMessage(Message.Get("Tp.Sent.All"));
     }
 
-    public static void TpCancel(User sender, string[] args)
+    public static void TpCancel(User sender, Command command, string label, string[] args)
     {
         if (args.Length == 0)
         {
@@ -158,7 +143,7 @@ public static class TpCommand
         }
     }
 
-    public static void TpAccept(User sender, string[] args)
+    public static void TpAccept(User sender, Command command, string label, string[] args)
     {
         if (args.Length == 0)
         {
@@ -219,7 +204,7 @@ public static class TpCommand
         }
     }
 
-    public static void TpDeny(User sender, string[] args)
+    public static void TpDeny(User sender, Command command, string label, string[] args)
     {
         if (args.Length == 0)
         {
@@ -268,26 +253,16 @@ public static class TpCommand
         request.Requester.SendMessage(Message.Get("Tp.Denied.Requester").Format(sender.PlayerName));
     }
 
-    public static void TpToggle(User sender, string[] args)
+    public static void TpToggle(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("tptoggle"))
-        {
-            return;
-        }
-
         var userData = sender.UserData;
         var enabled = args.Length == 0 ? !userData.TeleportEnabled : bool.Parse(args[0]);
         userData.TeleportEnabled = enabled;
         sender.SendMessage(Message.Get(enabled ? "Tp.Enabled" : "Tp.Disabled"));
     }
 
-    public static void TpAuto(User sender, string[] args)
+    public static void TpAuto(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("tpauto"))
-        {
-            return;
-        }
-
         var userData = sender.UserData;
         var enabled = args.Length == 0 ? !userData.AutoTeleportEnabled : bool.Parse(args[0]);
         userData.AutoTeleportEnabled = enabled;

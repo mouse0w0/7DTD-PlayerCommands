@@ -1,18 +1,13 @@
 ﻿using HarmonyLib;
 
-namespace PlayerCommands.Command;
+namespace PlayerCommands.Commands;
 
 [HarmonyPatch]
 public static class BackCommand
 {
-    public static void Back(User sender, string[] args)
+    public static void Back(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("back"))
-        {
-            return;
-        }
-
-        if (sender.PrevLocation is {} prevLocation)
+        if (sender.PrevLocation is { } prevLocation)
         {
             if (TeleportHandler.Teleport(sender, prevLocation))
             {

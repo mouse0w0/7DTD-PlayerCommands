@@ -1,14 +1,9 @@
-﻿namespace PlayerCommands.Command;
+﻿namespace PlayerCommands.Commands;
 
 public static class HomeCommand
 {
-    public static void Home(User sender, string[] args)
+    public static void Home(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("home"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             if (sender.UserData.Homes.TryGetValue("default", out var location))
@@ -39,13 +34,8 @@ public static class HomeCommand
         }
     }
 
-    public static void SetHome(User sender, string[] args)
+    public static void SetHome(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("sethome"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.UserData.Homes["default"] = sender.Location;
@@ -58,13 +48,8 @@ public static class HomeCommand
         }
     }
 
-    public static void DelHome(User sender, string[] args)
+    public static void DelHome(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("delhome"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.UserData.Homes.Remove("default");
@@ -77,13 +62,8 @@ public static class HomeCommand
         }
     }
 
-    public static void ListHome(User sender, string[] args)
+    public static void ListHome(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("listhome"))
-        {
-            return;
-        }
-
         var homes = sender.UserData.Homes;
         foreach (var (key, value) in homes)
         {

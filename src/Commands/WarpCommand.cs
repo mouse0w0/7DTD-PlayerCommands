@@ -1,14 +1,9 @@
-﻿namespace PlayerCommands.Command;
+﻿namespace PlayerCommands.Commands;
 
 public static class WarpCommand
 {
-    public static void Warp(User sender, string[] args)
+    public static void Warp(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("warp"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
@@ -28,13 +23,8 @@ public static class WarpCommand
         }
     }
 
-    public static void SetWarp(User sender, string[] args)
+    public static void SetWarp(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("setwarp"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
@@ -52,13 +42,8 @@ public static class WarpCommand
         }
     }
 
-    public static void DelWarp(User sender, string[] args)
+    public static void DelWarp(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("delwarp"))
-        {
-            return;
-        }
-
         if (args.Length == 0)
         {
             sender.SendMessage(Message.Get("NoEnoughParam"));
@@ -75,13 +60,8 @@ public static class WarpCommand
         }
     }
 
-    public static void ListWarp(User sender, string[] args)
+    public static void ListWarp(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("listwarp"))
-        { 
-            return;
-        }
-
         foreach (var (key, value) in WorldData.Warps)
         {
             sender.SendMessage(Message.Get("ListWarp.Item").Format(key, value.ToPositionString()));

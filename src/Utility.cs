@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Platform;
 using UnityEngine;
 
@@ -118,14 +120,14 @@ public static class Utility
         return !SingletonMonoBehaviour<ConnectionManager>.Instance.IsServer;
     }
 
-    public static bool IsAdmin(this ClientInfo clientInfo)
+    public static bool HasPermission(this ClientInfo clientInfo, int permissionLevel)
     {
-        return clientInfo == null || GameManager.Instance.adminTools.Users.GetUserPermissionLevel(clientInfo) == 0;
+        return clientInfo.GetUserPermissionLevel() <= permissionLevel;
     }
 
-    public static bool HasPermission(this ClientInfo clientInfo, string permission)
+    public static int GetUserPermissionLevel(this ClientInfo clientInfo)
     {
-        return Config.PlayerCommands.Contains(permission) || clientInfo.IsAdmin();
+        return clientInfo != null ? GameManager.Instance.adminTools.Users.GetUserPermissionLevel(clientInfo) : 0;
     }
 
     public static int GetEntityId(this ClientInfo clientInfo)
@@ -179,5 +181,14 @@ public static class Utility
         }
 
         File.WriteAllText(path, contents);
+    }
+
+    public static void PopulateObject(this JToken token, object target,
+        [CanBeNull] JsonSerializerSettings settings = null)
+    {
+        using (var reader = token.CreateReader())
+        {
+            JsonSerializer.CreateDefault(settings).Populate(reader, target);
+        }
     }
 }

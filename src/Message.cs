@@ -10,7 +10,7 @@ public static class Message
 
     public static void Load()
     {
-        var file = Main.Instance.Path + "/Message.json";
+        var file = Main.Instance.Path + "/Message.jsonc";
         if (!File.Exists(file))
         {
             Log.Error($"[PlayerCommands] Not found message file at {file}");

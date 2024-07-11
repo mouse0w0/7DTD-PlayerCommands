@@ -1,16 +1,11 @@
 ﻿using System;
 
-namespace PlayerCommands.Command;
+namespace PlayerCommands.Commands;
 
 public static class SpawnCommand
 {
-    public static void Spawn(User sender, string[] args)
+    public static void Spawn(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("spawn"))
-        {
-            return;
-        }
-
         if (WorldData.Spawn != null)
         {
             if (TeleportHandler.Teleport(sender, WorldData.Spawn ?? throw new NullReferenceException()))
@@ -24,24 +19,14 @@ public static class SpawnCommand
         }
     }
 
-    public static void SetSpawn(User sender, string[] args)
+    public static void SetSpawn(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("setspawn"))
-        {
-            return;
-        }
-
         WorldData.Spawn = sender.Location;
         sender.SendMessage(Message.Get("SetSpawn.Success"));
     }
 
-    public static void DelSpawn(User sender, string[] args)
+    public static void DelSpawn(User sender, Command command, string label, string[] args)
     {
-        if (sender.IsNoPermissionAndSendMessage("delspawn"))
-        {
-            return;
-        }
-
         WorldData.Spawn = null;
         sender.SendMessage(Message.Get("DelSpawn.Success"));
     }
