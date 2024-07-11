@@ -113,7 +113,10 @@
       "PermissionLevel": 1000
     }
   },
+  // 传送冷却时间，设置为0则不冷却，单位：秒
   "TeleportCooldown": 0,
+  // 传送请求超时时间，设置为0则永不超时，单位：秒
   "TeleportRequestTimeout": 120,
+  // 待处理的最大传送请求数量，设置为0则无限数量
   "TeleportMaxRequests": 10
 }
