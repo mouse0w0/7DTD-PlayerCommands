@@ -33,18 +33,6 @@
       "PermissionLevel": 1000,
       "Cooldown": 0
     },
-    // 开关接收传送请求
-    "tptoggle": {
-      "Labels": ["/tptoggle"],
-      "PermissionLevel": 1000,
-      "Cooldown": 0
-    },
-    // 开关自动接受传送请求
-    "tpauto": {
-      "Labels": ["/tpauto"],
-      "PermissionLevel": 1000,
-      "Cooldown": 0
-    },
     // 接受传送请求
     "tpaccept": {
       "Labels": ["/tpaccept", "/ok"],
@@ -54,6 +42,18 @@
     // 拒绝传送请求
     "tpdeny": {
       "Labels": ["/tpdeny", "/no"],
+      "PermissionLevel": 1000,
+      "Cooldown": 0
+    },
+    // 开关接收传送请求
+    "tptoggle": {
+      "Labels": ["/tptoggle"],
+      "PermissionLevel": 1000,
+      "Cooldown": 0
+    },
+    // 开关自动接受传送请求
+    "tpauto": {
+      "Labels": ["/tpauto"],
       "PermissionLevel": 1000,
       "Cooldown": 0
     },
