@@ -91,7 +91,16 @@ public static class CommandManager
             return false;
         }
 
-        command.Executor(_cInfo.ToUser(), command, label, args[1..]);
+        try
+        {
+            command.Executor(_cInfo.ToUser(), command, label, args[1..]);
+        }
+        catch (Exception e)
+        {
+            Log.Error("Unhandled exception executing command");
+            Log.Exception(e);
+        }
+
         return false;
     }
 }
