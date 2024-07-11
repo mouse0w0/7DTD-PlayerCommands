@@ -27,12 +27,6 @@
       "PermissionLevel": 1000,
       "Cooldown": 0
     },
-    // 取消传送请求
-    "tpcancel": {
-      "Labels": ["/tpcancel"],
-      "PermissionLevel": 1000,
-      "Cooldown": 0
-    },
     // 接受传送请求
     "tpaccept": {
       "Labels": ["/tpaccept", "/ok"],
@@ -42,6 +36,12 @@
     // 拒绝传送请求
     "tpdeny": {
       "Labels": ["/tpdeny", "/no"],
+      "PermissionLevel": 1000,
+      "Cooldown": 0
+    },
+    // 取消传送请求
+    "tpcancel": {
+      "Labels": ["/tpcancel"],
       "PermissionLevel": 1000,
       "Cooldown": 0
     },

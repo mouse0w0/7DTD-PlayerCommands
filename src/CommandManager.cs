@@ -20,9 +20,9 @@ public static class CommandManager
         Register("tp", TpCommand.Tp);
         Register("tphere", TpCommand.TpHere);
         Register("tpall", TpCommand.TpAll);
-        Register("tpcancel", TpCommand.TpCancel);
         Register("tpaccept", TpCommand.TpAccept);
         Register("tpdeny", TpCommand.TpDeny);
+        Register("tpcancel", TpCommand.TpCancel);
         Register("tptoggle", TpCommand.TpToggle);
         Register("tpauto", TpCommand.TpAuto);
         Register("suicide", SuicideCommand.Suicide);
