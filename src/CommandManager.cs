@@ -69,8 +69,7 @@ public static class CommandManager
 
     [HarmonyPatch(typeof(GameManager), nameof(GameManager.ChatMessageServer))]
     [HarmonyPrefix]
-    public static bool GameManager_ChatMessageServer_Prefix(ClientInfo _cInfo, int _senderEntityId, string _msg,
-        string _mainName)
+    public static bool GameManager_ChatMessageServer_Prefix(ClientInfo _cInfo, int _senderEntityId, string _msg)
     {
         if (Utility.IsClient()) return true;
         if (_senderEntityId == -1) return true;

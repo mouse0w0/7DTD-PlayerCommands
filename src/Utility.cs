@@ -80,19 +80,13 @@ public static class Utility
         return GetClientInfo(entityPlayer.entityId);
     }
 
-    public static void SendMessage(this ClientInfo receiver, string message)
-    {
-        SendMessage(receiver, null, message);
-    }
-
-    public static void SendMessage(this ClientInfo receiver, string sender, string message,
-        EChatType type = EChatType.Global)
+    public static void SendMessage(this ClientInfo receiver, string message, EChatType type = EChatType.Global)
     {
         if (receiver != null)
-            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, sender,
-                new List<int> { receiver.entityId });
+            GameManager.Instance.ChatMessageServer(receiver, type, -1, message, [receiver.entityId],
+                EMessageSender.None);
         else
-            GameManager.Instance.ChatMessageClient(type, -1, message, sender, null);
+            GameManager.Instance.ChatMessageClient(type, -1, message, null, EMessageSender.None);
     }
 
     public static void Teleport(this ClientInfo clientInfo, Location location)
