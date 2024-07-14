@@ -38,7 +38,7 @@ public static class WarpCommand
         else
         {
             WorldData.Warps.Add(args[0], sender.Location);
-            sender.SendMessage(Message.Get("SetWrap.Success").Format(args[0]));
+            sender.SendMessage(Message.Get("SetWarp.Success").Format(args[0]));
         }
     }
 
