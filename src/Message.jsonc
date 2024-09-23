@@ -2,11 +2,11 @@
   "Help": [
     "[FFAA00]/tp <玩家> - 请求传送到玩家",
     "[FFAA00]/tph <玩家> - 请求玩家传送到你",
-    "[FFAA00]/home - 回家",
-    "[FFAA00]/sethome - 设置家",
-    "[FFAA00]/back - 返回上一地点",
-    "[FFAA00]/spawn - 传送到出生点",
-    "[FFAA00]/warp <地标> - 传送到地标"
+    "[FFAA00]/zs - 自杀",
+    "[FFAA00]/hj - 回家",
+    "[FFAA00]/szj - 设置家",
+    "[FFAA00]/hq - 返回上一地点",
+    "[FFAA00]/wp <地标> - 传送到地标"
   ],
   "Tp.Request": "[FFAA00]{0}请求传送到你，输入/ok接受",
   "Tp.Request.Here": "[FFAA00]{0}请求你传送到他，输入/ok接受",
