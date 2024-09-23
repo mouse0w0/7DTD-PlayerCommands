@@ -167,58 +167,6 @@
         <HintPath>..\..\Library V1.0\Microsoft.Win32.Registry.dll</HintPath>
         <Private>False</Private>
       </Reference>
-      <Reference Include="Mono.Cecil">
-        <HintPath>..\..\Library V1.0\Mono.Cecil.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.Cecil.Mdb">
-        <HintPath>..\..\Library V1.0\Mono.Cecil.Mdb.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.Cecil.Pdb">
-        <HintPath>..\..\Library V1.0\Mono.Cecil.Pdb.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.Cecil.Rocks">
-        <HintPath>..\..\Library V1.0\Mono.Cecil.Rocks.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.Posix">
-        <HintPath>..\..\Library V1.0\Mono.Posix.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.Security">
-        <HintPath>..\..\Library V1.0\Mono.Security.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="Mono.WebBrowser">
-        <HintPath>..\..\Library V1.0\Mono.WebBrowser.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.Backports">
-        <HintPath>..\..\Library V1.0\MonoMod.Backports.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.Core">
-        <HintPath>..\..\Library V1.0\MonoMod.Core.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.Iced">
-        <HintPath>..\..\Library V1.0\MonoMod.Iced.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.ILHelpers">
-        <HintPath>..\..\Library V1.0\MonoMod.ILHelpers.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.RuntimeDetour">
-        <HintPath>..\..\Library V1.0\MonoMod.RuntimeDetour.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="MonoMod.Utils">
-        <HintPath>..\..\Library V1.0\MonoMod.Utils.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
       <Reference Include="mscorlib">
         <HintPath>..\..\Library V1.0\mscorlib.dll</HintPath>
         <Private>False</Private>
