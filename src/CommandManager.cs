@@ -110,7 +110,7 @@ public static class CommandManager
 
         try
         {
-            command.Executor(_cInfo.ToUser(), command, label, args[1..]);
+            command.Executor(sender, command, label, args[1..]);
         }
         catch (Exception e)
         {

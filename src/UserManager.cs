@@ -100,7 +100,6 @@ public static class UserManager
 
     public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)
     {
-        if (Utility.IsClient()) return;
         if (type is RespawnType.Died or RespawnType.Teleport or RespawnType.Unknown) return;
 
         var playerId = clientInfo.GetPlayerId();

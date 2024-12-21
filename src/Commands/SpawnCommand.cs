@@ -33,7 +33,6 @@ public static class SpawnCommand
 
     public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)
     {
-        if (Utility.IsClient()) return;
         if (type is not (RespawnType.NewGame or RespawnType.EnterMultiplayer)) return;
         if (WorldData.Spawn == null) return;
         clientInfo.Teleport(WorldData.Spawn ?? throw new Exception("Cannot reach"));

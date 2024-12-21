@@ -24,4 +24,15 @@ public static class Events
         if (Utility.IsClient()) return;
         WorldUnloading.Invoke();
     }
+
+    public static readonly ModEvent<ClientInfo, RespawnType, Vector3i> PlayerSpawnedInWorld = new();
+
+    [HarmonyPatch(typeof(GameManager), nameof(GameManager.PlayerSpawnedInWorld))]
+    [HarmonyPrefix]
+    public static void GameManager_PlayerSpawnedInWorld_Prefix(ClientInfo _cInfo, RespawnType _respawnReason,
+        Vector3i _pos)
+    {
+        if (Utility.IsClient()) return;
+        PlayerSpawnedInWorld.Invoke(_cInfo, _respawnReason, _pos);
+    }
 }

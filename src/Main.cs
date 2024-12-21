@@ -19,9 +19,9 @@ public class Main : IModApi
         Events.WorldCreated.RegisterHandler(WorldData.OnWorldCreated);
         Events.WorldUnloading.RegisterHandler(WorldData.OnWorldUnloading);
         Events.WorldUnloading.RegisterHandler(UserManager.OnWorldUnloading);
-        ModEvents.PlayerSpawnedInWorld.RegisterHandler(UserManager.OnPlayerSpawnedInWorld);
+        Events.PlayerSpawnedInWorld.RegisterHandler(UserManager.OnPlayerSpawnedInWorld);
+        Events.PlayerSpawnedInWorld.RegisterHandler(SpawnCommand.OnPlayerSpawnedInWorld);
         ModEvents.PlayerDisconnected.RegisterHandler(UserManager.OnPlayerDisconnected);
-        ModEvents.PlayerSpawnedInWorld.RegisterHandler(SpawnCommand.OnPlayerSpawnedInWorld);
         ModEvents.EntityKilled.RegisterHandler(BackCommand.OnEntityKilled);
     }
 }
