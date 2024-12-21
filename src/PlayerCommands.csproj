@@ -38,6 +38,7 @@
       <Compile Include="Command.cs"/>
         <Compile Include="CommandManager.cs" />
         <Compile Include="Events.cs" />
+      <Compile Include="MyContractResolver.cs"/>
         <Compile Include="TeleportHandler.cs" />
         <Compile Include="TeleportRequest.cs" />
         <Compile Include="TeleportRequestList.cs" />

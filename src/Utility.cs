@@ -185,4 +185,21 @@ public static class Utility
             JsonSerializer.CreateDefault(settings).Populate(reader, target);
         }
     }
+
+    public static string _ToString([CanBeNull] this object value)
+    {
+        return value?.GetType().FullName + "\n" +
+               JsonConvert.SerializeObject(value, new JsonSerializerSettings
+               {
+                   MaxDepth = 3,
+                   Formatting = Formatting.Indented,
+                   ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                   ContractResolver = new MyContractResolver(),
+                   Error = (sender, args) =>
+                   {
+                       Log.Out($"Serialization error: {args.ErrorContext.Error.Message}");
+                       args.ErrorContext.Handled = true;
+                   },
+               });
+    }
 }
