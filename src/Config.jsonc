@@ -27,6 +27,12 @@
       "PermissionLevel": 1000,
       "Cooldown": 0
     },
+    // 请求队伍中所有玩家传送到你
+    "tpparty": {
+      "Labels": ["/tpparty", "/tpp"],
+      "PermissionLevel": 1000,
+      "Cooldown": 0
+    },
     // 接受传送请求
     "tpaccept": {
       "Labels": ["/tpaccept", "/ok"],

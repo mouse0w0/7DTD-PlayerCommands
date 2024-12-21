@@ -20,6 +20,7 @@ public static class CommandManager
         Register("tp", TpCommand.Tp);
         Register("tphere", TpCommand.TpHere);
         Register("tpall", TpCommand.TpAll);
+        Register("tpparty", TpCommand.TpParty);
         Register("tpaccept", TpCommand.TpAccept);
         Register("tpdeny", TpCommand.TpDeny);
         Register("tpcancel", TpCommand.TpCancel);

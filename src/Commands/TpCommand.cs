@@ -1,4 +1,6 @@
-﻿namespace PlayerCommands.Commands;
+﻿using System.Linq;
+
+namespace PlayerCommands.Commands;
 
 public static class TpCommand
 {
@@ -91,6 +93,36 @@ public static class TpCommand
     public static void TpAll(User sender, Command command, string label, string[] args)
     {
         foreach (var target in UserManager.GetUsers())
+        {
+            if (target == sender) continue;
+            var userData = target.UserData;
+            if (!userData.TeleportEnabled) continue;
+            if (userData.AutoTeleportEnabled)
+            {
+                TeleportHandler.Teleport(target, sender);
+                target.SendMessage(Message.Get("Tp.Accepted.Auto").Format(sender.PlayerName));
+                sender.SendMessage(Message.Get("Tp.Teleported.Auto").Format(target.EntityName));
+            }
+            else
+            {
+                target.TeleportRequestList.Push(new TeleportRequest(sender, true));
+                target.SendMessage(Message.Get("Tp.Request.Here").Format(sender.PlayerName));
+            }
+        }
+
+        sender.SendMessage(Message.Get("Tp.Sent.All"));
+    }
+
+    public static void TpParty(User sender, Command command, string label, string[] args)
+    {
+        var party = sender.EntityPlayer.Party;
+        if (party == null)
+        {
+            sender.SendMessage(Message.Get("Command.NotJoinedParty"));
+            return;
+        }
+
+        foreach (var target in party.MemberList.Select(UserManager.ToUser))
         {
             if (target == sender) continue;
             var userData = target.UserData;
