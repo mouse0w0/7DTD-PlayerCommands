@@ -31,10 +31,10 @@ public static class SpawnCommand
         sender.SendMessage(Message.Get("DelSpawn.Success"));
     }
 
-    public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)
+    public static void OnPlayerSpawnedInWorld(ref Events.SPlayerSpawnedInWorldData data)
     {
-        if (type is not (RespawnType.NewGame or RespawnType.EnterMultiplayer)) return;
+        if (data.RespawnType is not (RespawnType.NewGame or RespawnType.EnterMultiplayer)) return;
         if (WorldData.Spawn == null) return;
-        clientInfo.Teleport(WorldData.Spawn ?? throw new Exception("Cannot reach"));
+        data.ClientInfo.Teleport(WorldData.Spawn ?? throw new Exception("Cannot reach"));
     }
 }

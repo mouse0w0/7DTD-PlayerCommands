@@ -74,627 +74,635 @@
     </ItemGroup>
     <ItemGroup>
       <Reference Include="0Harmony">
-        <HintPath>..\..\Library V1.2\0Harmony.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\0Harmony.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Accessibility">
-        <HintPath>..\..\Library V1.2\Accessibility.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Accessibility.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="AmplifyShaderEditor.Samples.BuiltIn">
-        <HintPath>..\..\Library V1.2\AmplifyShaderEditor.Samples.BuiltIn.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\AmplifyShaderEditor.Samples.BuiltIn.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Antlr3.Runtime">
-        <HintPath>..\..\Library V1.2\Antlr3.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Antlr3.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Assembly-CSharp">
-        <HintPath>..\..\Library V1.2\Assembly-CSharp.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Assembly-CSharp.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Assembly-CSharp-firstpass">
-        <HintPath>..\..\Library V1.2\Assembly-CSharp-firstpass.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Assembly-CSharp-firstpass.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="AstarPathfindingProject">
-        <HintPath>..\..\Library V1.2\AstarPathfindingProject.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\AstarPathfindingProject.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Backtrace.Unity">
-        <HintPath>..\..\Library V1.2\Backtrace.Unity.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Backtrace.Unity.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="BouncyCastle_GameSparks">
-        <HintPath>..\..\Library V1.2\BouncyCastle_GameSparks.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="com.alteregogames.aeg-dlss.Runtime">
-        <HintPath>..\..\Library V1.2\com.alteregogames.aeg-dlss.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\BouncyCastle_GameSparks.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="com.rlabrecque.steamworks.net">
-        <HintPath>..\..\Library V1.2\com.rlabrecque.steamworks.net.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\com.rlabrecque.steamworks.net.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="com.thenakeddev.dlss.Runtime">
+        <HintPath>..\..\Libraries_V2_0\com.thenakeddev.dlss.Runtime.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="com.thenakeddev.fsr.Runtime">
+        <HintPath>..\..\Libraries_V2_0\com.thenakeddev.fsr.Runtime.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="com.thenakeddev.fsr.Runtime.BIRP">
+        <HintPath>..\..\Libraries_V2_0\com.thenakeddev.fsr.Runtime.BIRP.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="Discord.Sdk">
+        <HintPath>..\..\Libraries_V2_0\Discord.Sdk.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="enum2int">
-        <HintPath>..\..\Library V1.2\enum2int.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\enum2int.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="EOS">
-        <HintPath>..\..\Library V1.2\EOS.dll</HintPath>
-        <Private>False</Private>
-      </Reference>
-      <Reference Include="FidelityFX.FSR">
-        <HintPath>..\..\Library V1.2\FidelityFX.FSR.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\EOS.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="GameSparks">
-        <HintPath>..\..\Library V1.2\GameSparks.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\GameSparks.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="GameSparks.Api">
-        <HintPath>..\..\Library V1.2\GameSparks.Api.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\GameSparks.Api.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="GameSparksRT">
-        <HintPath>..\..\Library V1.2\GameSparksRT.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\GameSparksRT.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="HBAO.Demo.Runtime">
-        <HintPath>..\..\Library V1.2\HBAO.Demo.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\HBAO.Demo.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="HBAO.Runtime">
-        <HintPath>..\..\Library V1.2\HBAO.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\HBAO.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="InControl">
-        <HintPath>..\..\Library V1.2\InControl.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\InControl.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="InControl.Examples">
-        <HintPath>..\..\Library V1.2\InControl.Examples.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\InControl.Examples.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="libnoise">
-        <HintPath>..\..\Library V1.2\libnoise.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\libnoise.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="LogLibrary">
-        <HintPath>..\..\Library V1.2\LogLibrary.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\LogLibrary.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="MemoryPack">
-        <HintPath>..\..\Library V1.2\MemoryPack.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\MemoryPack.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Microsoft.Win32.Registry">
-        <HintPath>..\..\Library V1.2\Microsoft.Win32.Registry.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Microsoft.Win32.Registry.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Mono.Posix">
-        <HintPath>..\..\Library V1.2\Mono.Posix.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Mono.Posix.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Mono.Security">
-        <HintPath>..\..\Library V1.2\Mono.Security.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Mono.Security.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Mono.WebBrowser">
-        <HintPath>..\..\Library V1.2\Mono.WebBrowser.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Mono.WebBrowser.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="mscorlib">
-        <HintPath>..\..\Library V1.2\mscorlib.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\mscorlib.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio">
-        <HintPath>..\..\Library V1.2\NAudio.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio.Asio">
-        <HintPath>..\..\Library V1.2\NAudio.Asio.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.Asio.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio.Core">
-        <HintPath>..\..\Library V1.2\NAudio.Core.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.Core.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio.Midi">
-        <HintPath>..\..\Library V1.2\NAudio.Midi.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.Midi.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio.Wasapi">
-        <HintPath>..\..\Library V1.2\NAudio.Wasapi.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.Wasapi.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NAudio.WinMM">
-        <HintPath>..\..\Library V1.2\NAudio.WinMM.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NAudio.WinMM.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NCalc">
-        <HintPath>..\..\Library V1.2\NCalc.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NCalc.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="netstandard">
-        <HintPath>..\..\Library V1.2\netstandard.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\netstandard.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Newtonsoft.Json">
-        <HintPath>..\..\Library V1.2\Newtonsoft.Json.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Newtonsoft.Json.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="NGUI">
-        <HintPath>..\..\Library V1.2\NGUI.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\NGUI.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Noemax.GZip">
-        <HintPath>..\..\Library V1.2\Noemax.GZip.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Noemax.GZip.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Pathfinding.ClipperLib">
-        <HintPath>..\..\Library V1.2\Pathfinding.ClipperLib.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Pathfinding.ClipperLib.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-        <HintPath>..\..\Library V1.2\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Pathfinding.Poly2Tri">
-        <HintPath>..\..\Library V1.2\Pathfinding.Poly2Tri.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Pathfinding.Poly2Tri.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="ScreenSpaceReflections">
-        <HintPath>..\..\Library V1.2\ScreenSpaceReflections.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\ScreenSpaceReflections.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System">
-        <HintPath>..\..\Library V1.2\System.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.ComponentModel.Composition">
-        <HintPath>..\..\Library V1.2\System.ComponentModel.Composition.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.ComponentModel.Composition.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Configuration">
-        <HintPath>..\..\Library V1.2\System.Configuration.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Configuration.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Configuration.Install">
-        <HintPath>..\..\Library V1.2\System.Configuration.Install.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Configuration.Install.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Core">
-        <HintPath>..\..\Library V1.2\System.Core.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Core.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Data">
-        <HintPath>..\..\Library V1.2\System.Data.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Data.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Data.DataSetExtensions">
-        <HintPath>..\..\Library V1.2\System.Data.DataSetExtensions.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Data.DataSetExtensions.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Drawing">
-        <HintPath>..\..\Library V1.2\System.Drawing.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Drawing.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.EnterpriseServices">
-        <HintPath>..\..\Library V1.2\System.EnterpriseServices.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.EnterpriseServices.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.IO.Compression">
-        <HintPath>..\..\Library V1.2\System.IO.Compression.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.IO.Compression.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.IO.Compression.FileSystem">
-        <HintPath>..\..\Library V1.2\System.IO.Compression.FileSystem.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.IO.Compression.FileSystem.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Net.Http">
-        <HintPath>..\..\Library V1.2\System.Net.Http.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Net.Http.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Numerics">
-        <HintPath>..\..\Library V1.2\System.Numerics.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Numerics.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Runtime">
-        <HintPath>..\..\Library V1.2\System.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Runtime.CompilerServices.Unsafe">
-        <HintPath>..\..\Library V1.2\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Runtime.Serialization">
-        <HintPath>..\..\Library V1.2\System.Runtime.Serialization.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Runtime.Serialization.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Security">
-        <HintPath>..\..\Library V1.2\System.Security.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Security.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.ServiceModel.Internals">
-        <HintPath>..\..\Library V1.2\System.ServiceModel.Internals.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.ServiceModel.Internals.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.ServiceProcess">
-        <HintPath>..\..\Library V1.2\System.ServiceProcess.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.ServiceProcess.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Transactions">
-        <HintPath>..\..\Library V1.2\System.Transactions.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Transactions.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Windows.Forms">
-        <HintPath>..\..\Library V1.2\System.Windows.Forms.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Windows.Forms.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Xml">
-        <HintPath>..\..\Library V1.2\System.Xml.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Xml.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="System.Xml.Linq">
-        <HintPath>..\..\Library V1.2\System.Xml.Linq.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\System.Xml.Linq.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Addressables">
-        <HintPath>..\..\Library V1.2\Unity.Addressables.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Addressables.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Animation.Rigging">
-        <HintPath>..\..\Library V1.2\Unity.Animation.Rigging.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Animation.Rigging.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Animation.Rigging.DocCodeExamples">
-        <HintPath>..\..\Library V1.2\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Burst">
-        <HintPath>..\..\Library V1.2\Unity.Burst.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Burst.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Burst.Unsafe">
-        <HintPath>..\..\Library V1.2\Unity.Burst.Unsafe.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Burst.Unsafe.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Collections">
-        <HintPath>..\..\Library V1.2\Unity.Collections.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Collections.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Collections.LowLevel.ILSupport">
-        <HintPath>..\..\Library V1.2\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Mathematics">
-        <HintPath>..\..\Library V1.2\Unity.Mathematics.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Mathematics.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.MemoryProfiler">
-        <HintPath>..\..\Library V1.2\Unity.MemoryProfiler.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.MemoryProfiler.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Microsoft.GDK">
-        <HintPath>..\..\Library V1.2\Unity.Microsoft.GDK.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Microsoft.GDK.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Microsoft.GDK.Tools">
-        <HintPath>..\..\Library V1.2\Unity.Microsoft.GDK.Tools.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Microsoft.GDK.Tools.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>..\..\Library V1.2\Unity.Postprocessing.Runtime.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Postprocessing.Runtime.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.Profiling.Core">
-        <HintPath>..\..\Library V1.2\Unity.Profiling.Core.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.Profiling.Core.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.ResourceManager">
-        <HintPath>..\..\Library V1.2\Unity.ResourceManager.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.ResourceManager.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.ScriptableBuildPipeline">
-        <HintPath>..\..\Library V1.2\Unity.ScriptableBuildPipeline.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.ScriptableBuildPipeline.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.TerrainTools">
-        <HintPath>..\..\Library V1.2\Unity.TerrainTools.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.TerrainTools.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Unity.TextMeshPro">
-        <HintPath>..\..\Library V1.2\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Unity.TextMeshPro.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine">
-        <HintPath>..\..\Library V1.2\UnityEngine.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AccessibilityModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AccessibilityModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AccessibilityModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AIModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AIModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AndroidJNIModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AndroidJNIModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AndroidJNIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AnimationModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AnimationModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AnimationModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ARModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ARModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ARModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AssetBundleModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AssetBundleModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AssetBundleModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.AudioModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.AudioModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.AudioModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ClothModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ClothModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ClothModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ClusterInputModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ClusterInputModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ClusterInputModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ClusterRendererModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ClusterRendererModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ClusterRendererModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ContentLoadModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ContentLoadModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ContentLoadModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.CoreModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.CoreModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.CoreModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.CrashReportingModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.CrashReportingModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.CrashReportingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.DirectorModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.DirectorModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.DirectorModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.DSPGraphModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.DSPGraphModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.DSPGraphModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.GameCenterModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.GameCenterModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.GameCenterModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.GIModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.GIModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.GIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.GridModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.GridModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.GridModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.HotReloadModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.HotReloadModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.HotReloadModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ImageConversionModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ImageConversionModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ImageConversionModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.IMGUIModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.IMGUIModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.IMGUIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.InputLegacyModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.InputLegacyModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.InputLegacyModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.InputModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.InputModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.InputModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.JSONSerializeModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.JSONSerializeModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.JSONSerializeModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.LocalizationModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.LocalizationModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.LocalizationModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.NVIDIAModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.NVIDIAModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.NVIDIAModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ParticleSystemModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ParticleSystemModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ParticleSystemModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.PerformanceReportingModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.PerformanceReportingModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.PerformanceReportingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.Physics2DModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.Physics2DModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.Physics2DModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.PhysicsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.PhysicsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.PhysicsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ProfilerModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ProfilerModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ProfilerModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.PropertiesModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.PropertiesModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.PropertiesModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.ScreenCaptureModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.ScreenCaptureModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.ScreenCaptureModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.SharedInternalsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.SharedInternalsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.SharedInternalsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.SpriteMaskModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.SpriteMaskModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.SpriteMaskModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.SpriteShapeModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.SpriteShapeModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.SpriteShapeModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.StreamingModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.StreamingModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.StreamingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.SubstanceModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.SubstanceModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.SubstanceModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.SubsystemsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.SubsystemsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.SubsystemsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TerrainModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TerrainModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TerrainModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TerrainPhysicsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TerrainPhysicsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TextCoreFontEngineModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TextCoreTextEngineModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TextRenderingModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TextRenderingModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TextRenderingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TilemapModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TilemapModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TilemapModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.TLSModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.TLSModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.TLSModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UI">
-        <HintPath>..\..\Library V1.2\UnityEngine.UI.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UI.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UIElementsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UIElementsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UIElementsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UIModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UIModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UIModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UmbraModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UmbraModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UmbraModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityAnalyticsModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityAnalyticsModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityConnectModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityConnectModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityConnectModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityCurlModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityCurlModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityCurlModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityTestProtocolModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityTestProtocolModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityWebRequestModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityWebRequestModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.VehiclesModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.VehiclesModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.VehiclesModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.VFXModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.VFXModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.VFXModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.VideoModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.VideoModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.VideoModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.VirtualTexturingModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.VirtualTexturingModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.VirtualTexturingModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.VRModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.VRModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.VRModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.WindModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.WindModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.WindModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="UnityEngine.XRModule">
-        <HintPath>..\..\Library V1.2\UnityEngine.XRModule.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\UnityEngine.XRModule.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="Utf8Json">
-        <HintPath>..\..\Library V1.2\Utf8Json.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\Utf8Json.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="XblPCSandbox">
-        <HintPath>..\..\Library V1.2\XblPCSandbox.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\XblPCSandbox.dll</HintPath>
         <Private>False</Private>
       </Reference>
       <Reference Include="zxing.unity">
-        <HintPath>..\..\Library V1.2\zxing.unity.dll</HintPath>
+        <HintPath>..\..\Libraries_V2_0\zxing.unity.dll</HintPath>
         <Private>False</Private>
       </Reference>
     </ItemGroup>

@@ -8,12 +8,12 @@ public static class WorldData
     public static Location? Spawn { get; set; }
     public static Dictionary<string, Location> Warps { get; private set; }
 
-    public static void OnWorldCreated()
+    public static void OnWorldCreated(ref Events.SWorldCreatedData data)
     {
         Load();
     }
 
-    public static void OnWorldUnloading()
+    public static void OnWorldUnloading(ref Events.SWorldUnloadingData data)
     {
         Save();
         Cleanup();

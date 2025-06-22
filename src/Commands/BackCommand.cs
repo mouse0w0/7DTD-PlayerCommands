@@ -20,10 +20,10 @@ public static class BackCommand
         }
     }
 
-    public static void OnEntityKilled(Entity entity, Entity killer)
+    public static void OnEntityKilled(ref ModEvents.SEntityKilledData data)
     {
         if (Utility.IsClient()) return;
-        if (entity is not EntityPlayer entityPlayer) return;
+        if (data.KilledEntitiy is not EntityPlayer entityPlayer) return;
         var user = entityPlayer.ToUser();
         user.PrevLocation = user.Location;
     }

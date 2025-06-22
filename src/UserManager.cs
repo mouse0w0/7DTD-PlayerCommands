@@ -98,10 +98,11 @@ public static class UserManager
         return GetUserByEntityId(entityPlayer.entityId);
     }
 
-    public static void OnPlayerSpawnedInWorld(ClientInfo clientInfo, RespawnType type, Vector3i position)
+    public static void OnPlayerSpawnedInWorld(ref Events.SPlayerSpawnedInWorldData data)
     {
-        if (type is RespawnType.Died or RespawnType.Teleport or RespawnType.Unknown) return;
+        if (data.RespawnType is RespawnType.Died or RespawnType.Teleport or RespawnType.Unknown) return;
 
+        var clientInfo = data.ClientInfo;
         var playerId = clientInfo.GetPlayerId();
         var playerName = clientInfo.GetPlayerName();
         Log.Out($"[PlayerCommands] Loading user data {playerId}/{playerName}");
@@ -127,9 +128,9 @@ public static class UserManager
         Log.Out($"[PlayerCommands] Loaded user data {playerId}/{playerName}");
     }
 
-    public static void OnPlayerDisconnected(ClientInfo clientInfo, bool shutdown)
+    public static void OnPlayerDisconnected(ref ModEvents.SPlayerDisconnectedData data)
     {
-        var user = clientInfo.ToUser();
+        var user = data.ClientInfo.ToUser();
         if (user == null) return;
 
         user.Save();
@@ -139,7 +140,7 @@ public static class UserManager
         PlayerNameToUser.Remove(user.PlayerName);
     }
 
-    public static void OnWorldUnloading()
+    public static void OnWorldUnloading(ref Events.SWorldUnloadingData data)
     {
         foreach (var user in EntityIdToUser.Values)
         {
