@@ -39,11 +39,13 @@ public static class HomeCommand
         if (args.Length == 0)
         {
             sender.UserData.Homes["default"] = sender.Location;
+            sender.Save();
             sender.SendMessage(Message.Get("SetHome.Success.Default"));
         }
         else
         {
             sender.UserData.Homes[args[0]] = sender.Location;
+            sender.Save();
             sender.SendMessage(Message.Get("SetHome.Success").Format(args[0]));
         }
     }
@@ -53,11 +55,13 @@ public static class HomeCommand
         if (args.Length == 0)
         {
             sender.UserData.Homes.Remove("default");
+            sender.Save();
             sender.SendMessage(Message.Get("DelHome.Success.Default"));
         }
         else
         {
             sender.UserData.Homes.Remove(args[0]);
+            sender.Save();
             sender.SendMessage(Message.Get("DelHome.Success").Format(args[0]));
         }
     }

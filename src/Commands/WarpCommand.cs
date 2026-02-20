@@ -38,6 +38,7 @@ public static class WarpCommand
         else
         {
             WorldData.Warps.Add(args[0], sender.Location);
+            WorldData.SaveWraps();
             sender.SendMessage(Message.Get("SetWarp.Success").Format(args[0]));
         }
     }
@@ -52,6 +53,7 @@ public static class WarpCommand
 
         if (WorldData.Warps.Remove(args[0]))
         {
+            WorldData.SaveWraps();
             sender.SendMessage(Message.Get("DelWarp.Success").Format(args[0]));
         }
         else

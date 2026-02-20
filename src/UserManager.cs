@@ -118,9 +118,7 @@ public static class UserManager
             Log.Exception(e);
         }
 
-
         var user = new User(clientInfo.GetEntityPlayer(), clientInfo, userData);
-        user.UserData.LastPlayerName = user.PlayerName;
         EntityIdToUser[user.EntityId] = user;
         PlayerIdToUser[user.PlayerId] = user;
         PlayerNameToUser[user.PlayerName] = user;
@@ -133,8 +131,6 @@ public static class UserManager
         var user = data.ClientInfo.ToUser();
         if (user == null) return;
 
-        user.Save();
-
         EntityIdToUser.Remove(user.EntityId);
         PlayerIdToUser.Remove(user.PlayerId);
         PlayerNameToUser.Remove(user.PlayerName);
@@ -142,11 +138,6 @@ public static class UserManager
 
     public static void OnWorldUnloading(ref Events.SWorldUnloadingData data)
     {
-        foreach (var user in EntityIdToUser.Values)
-        {
-            user.Save();
-        }
-
         EntityIdToUser.Clear();
         PlayerIdToUser.Clear();
         PlayerNameToUser.Clear();

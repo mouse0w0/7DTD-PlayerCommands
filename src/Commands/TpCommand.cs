@@ -290,6 +290,7 @@ public static class TpCommand
         var userData = sender.UserData;
         var enabled = args.Length == 0 ? !userData.TeleportEnabled : bool.Parse(args[0]);
         userData.TeleportEnabled = enabled;
+        sender.Save();
         sender.SendMessage(Message.Get(enabled ? "Tp.Enabled" : "Tp.Disabled"));
     }
 
@@ -298,6 +299,7 @@ public static class TpCommand
         var userData = sender.UserData;
         var enabled = args.Length == 0 ? !userData.AutoTeleportEnabled : bool.Parse(args[0]);
         userData.AutoTeleportEnabled = enabled;
+        sender.Save();
         sender.SendMessage(Message.Get(enabled ? "TpAuto.Enabled" : "TpAuto.Disabled"));
         if (enabled && !userData.TeleportEnabled)
         {

@@ -22,12 +22,14 @@ public static class SpawnCommand
     public static void SetSpawn(User sender, Command command, string label, string[] args)
     {
         WorldData.Spawn = sender.Location;
+        WorldData.SaveSpawn();
         sender.SendMessage(Message.Get("SetSpawn.Success"));
     }
 
     public static void DelSpawn(User sender, Command command, string label, string[] args)
     {
         WorldData.Spawn = null;
+        WorldData.SaveSpawn();
         sender.SendMessage(Message.Get("DelSpawn.Success"));
     }
 

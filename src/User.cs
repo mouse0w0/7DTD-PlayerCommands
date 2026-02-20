@@ -53,7 +53,6 @@ public class User
 
     public void Save()
     {
-        Log.Out($"[PlayerCommands] Saving user data {PlayerId}/{PlayerName}");
         UserData.LastPlayerName = PlayerName;
         try
         {
@@ -64,7 +63,5 @@ public class User
             Log.Error($"[PlayerCommands] Error while saving user data {PlayerId}/{PlayerName}");
             Log.Exception(e);
         }
-
-        Log.Out($"[PlayerCommands] Saved user data {PlayerId}/{PlayerName}");
     }
 }

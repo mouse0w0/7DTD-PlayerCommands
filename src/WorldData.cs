@@ -15,7 +15,6 @@ public static class WorldData
 
     public static void OnWorldUnloading(ref Events.SWorldUnloadingData data)
     {
-        Save();
         Cleanup();
     }
 
@@ -29,12 +28,14 @@ public static class WorldData
         Log.Out("[PlayerCommands] Loaded world data.");
     }
 
-    private static void Save()
+    public static void SaveSpawn()
     {
-        Log.Out("[PlayerCommands] Saving world data.");
         Utility.WriteAllText(GetGlobalDataPath("Spawn.json"), JsonConvert.SerializeObject(Spawn));
+    }
+
+    public static void SaveWraps()
+    {
         Utility.WriteAllText(GetGlobalDataPath("Warps.json"), JsonConvert.SerializeObject(Warps));
-        Log.Out("[PlayerCommands] Saved world data.");
     }
 
     private static void Cleanup()
