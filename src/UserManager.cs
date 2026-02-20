@@ -33,7 +33,7 @@ public static class UserManager
                     jObject.Add("Homes", jHomes);
                 }
 
-                Utility.WriteAllText(UserDataDirectory + "/" + Path.GetFileName(legacyFile),
+                Utility.SafeWriteAllText(UserDataDirectory + "/" + Path.GetFileName(legacyFile),
                     jObject.ToString(Formatting.None));
             }
 

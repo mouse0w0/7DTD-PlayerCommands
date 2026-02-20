@@ -30,12 +30,12 @@ public static class WorldData
 
     public static void SaveSpawn()
     {
-        Utility.WriteAllText(GetGlobalDataPath("Spawn.json"), JsonConvert.SerializeObject(Spawn));
+        Utility.SafeWriteAllText(GetGlobalDataPath("Spawn.json"), JsonConvert.SerializeObject(Spawn));
     }
 
     public static void SaveWraps()
     {
-        Utility.WriteAllText(GetGlobalDataPath("Warps.json"), JsonConvert.SerializeObject(Warps));
+        Utility.SafeWriteAllText(GetGlobalDataPath("Warps.json"), JsonConvert.SerializeObject(Warps));
     }
 
     private static void Cleanup()

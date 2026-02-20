@@ -29,6 +29,6 @@ public class UserData
 
     public void Save()
     {
-        Utility.WriteAllText(_userDataFile, JsonConvert.SerializeObject(this));
+        Utility.SafeWriteAllText(_userDataFile, JsonConvert.SerializeObject(this));
     }
 }

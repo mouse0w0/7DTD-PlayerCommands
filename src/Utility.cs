@@ -176,6 +176,22 @@ public static class Utility
 
         File.WriteAllText(path, contents);
     }
+    
+    public static void SafeWriteAllText(string path, string contents)
+    {
+        var tempPath = path + ".tmp";
+
+        WriteAllText(tempPath, contents);
+
+        if (File.Exists(path))
+        {
+            File.Replace(tempPath, path, null);
+        }
+        else
+        {
+            File.Move(tempPath, path);
+        }
+    }
 
     public static void PopulateObject(this JToken token, object target,
         [CanBeNull] JsonSerializerSettings settings = null)
