@@ -179,17 +179,15 @@ public static class Utility
     
     public static void SafeWriteAllText(string path, string contents)
     {
-        var tempPath = path + ".tmp";
-
-        WriteAllText(tempPath, contents);
-
         if (File.Exists(path))
         {
+            var tempPath = path + ".tmp";
+            WriteAllText(tempPath, contents);
             File.Replace(tempPath, path, null);
         }
         else
         {
-            File.Move(tempPath, path);
+            WriteAllText(path, contents);
         }
     }
 
